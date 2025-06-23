@@ -1,0 +1,57 @@
+{
+	"id": "9d502d52-d381-4bc2-8887-6b2d24d5dd23",
+	"values": [
+		{
+			"key": "BaseUrl",
+			"value": "https://serverest.dev",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgLoginSucess",
+			"value": "Login realizado com sucesso",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "EmailModel",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "PasswordModel",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgLoginFail",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgEmailEmpty",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgWrongEmailPassword",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgPasswordEmpty",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2025-06-23T01:43:33.922Z",
+	"_postman_exported_using": "Postman/11.50.6"
+}
