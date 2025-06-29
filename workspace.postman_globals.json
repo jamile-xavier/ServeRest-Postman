@@ -126,10 +126,64 @@
 			"value": "",
 			"type": "default",
 			"enabled": true
+		},
+		{
+			"key": "MsgProductUpdatedSucess",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgErrorToken",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgInvalidPrice",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgInvalidQuantity",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgProductDuplicated",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgDeletedProductCart",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgCartCreated",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgCartFinishSucess",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgCartNotFound",
+			"value": "",
+			"type": "default",
+			"enabled": true
 		}
 	],
 	"name": "Globals",
 	"_postman_variable_scope": "globals",
-	"_postman_exported_at": "2025-06-28T18:17:57.294Z",
+	"_postman_exported_at": "2025-06-29T01:52:34.054Z",
 	"_postman_exported_using": "Postman/11.51.6"
 }
