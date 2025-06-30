@@ -180,10 +180,40 @@
 			"value": "",
 			"type": "default",
 			"enabled": true
+		},
+		{
+			"key": "MsgCartDuplicated",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgProductNotFound",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgCartIdNotAllowed",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgInvalidTotalPrice",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgInvalidTotalQuantity",
+			"value": "",
+			"type": "default",
+			"enabled": true
 		}
 	],
 	"name": "Globals",
 	"_postman_variable_scope": "globals",
-	"_postman_exported_at": "2025-06-29T01:52:34.054Z",
+	"_postman_exported_at": "2025-06-30T15:34:41.242Z",
 	"_postman_exported_using": "Postman/11.51.6"
 }

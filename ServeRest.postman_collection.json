@@ -620,6 +620,21 @@
 										}
 									],
 									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "value",
+													"value": "{{Token}}",
+													"type": "string"
+												},
+												{
+													"key": "key",
+													"value": "Authorization",
+													"type": "string"
+												}
+											]
+										},
 										"method": "POST",
 										"header": [],
 										"body": {
@@ -1114,6 +1129,21 @@
 										}
 									],
 									"request": {
+										"auth": {
+											"type": "apikey",
+											"apikey": [
+												{
+													"key": "value",
+													"value": "{{Token}}",
+													"type": "string"
+												},
+												{
+													"key": "key",
+													"value": "Authorization",
+													"type": "string"
+												}
+											]
+										},
 										"method": "POST",
 										"header": [],
 										"body": {
@@ -2018,7 +2048,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"nome\": \"{{FullName}}\",\r\n  \"email\": \"{{InvalidMail}}\",\r\n  \"password\": \"{{NewPassword}}\",\r\n  \"administrador\": \"true\"\r\n}",
+											"raw": "{\r\n  \"nome\": \"{{FullName}}\",\r\n  \"email\": \"{{MailDuplicate}}\",\r\n  \"password\": \"{{NewPassword}}\",\r\n  \"administrador\": \"true\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -2292,6 +2322,21 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "{{Token}}",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -2380,7 +2425,7 @@
 					"name": "Tests",
 					"item": [
 						{
-							"name": "Cadastrar produto com usário admin com sucesso",
+							"name": "Cadastrar produto com usuário admin com sucesso",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -2523,21 +2568,6 @@
 								}
 							],
 							"request": {
-								"auth": {
-									"type": "apikey",
-									"apikey": [
-										{
-											"key": "value",
-											"value": "{{Token}}",
-											"type": "string"
-										},
-										{
-											"key": "key",
-											"value": "Authorization",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -3483,6 +3513,21 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "{{Token}}",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -3771,6 +3816,21 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "{{TokenUser}}",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PUT",
 								"header": [],
 								"body": {
@@ -4181,6 +4241,21 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "{{Token}}",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -4415,21 +4490,6 @@
 										}
 									],
 									"request": {
-										"auth": {
-											"type": "apikey",
-											"apikey": [
-												{
-													"key": "value",
-													"value": "{{Token}}",
-													"type": "string"
-												},
-												{
-													"key": "key",
-													"value": "Authorization",
-													"type": "string"
-												}
-											]
-										},
 										"method": "POST",
 										"header": [],
 										"body": {
@@ -4597,21 +4657,6 @@
 										}
 									],
 									"request": {
-										"auth": {
-											"type": "apikey",
-											"apikey": [
-												{
-													"key": "value",
-													"value": "{{Token}}",
-													"type": "string"
-												},
-												{
-													"key": "key",
-													"value": "Authorization",
-													"type": "string"
-												}
-											]
-										},
 										"method": "POST",
 										"header": [],
 										"body": {
@@ -5012,21 +5057,6 @@
 										}
 									],
 									"request": {
-										"auth": {
-											"type": "apikey",
-											"apikey": [
-												{
-													"key": "value",
-													"value": "{{Token}}",
-													"type": "string"
-												},
-												{
-													"key": "key",
-													"value": "Authorization",
-													"type": "string"
-												}
-											]
-										},
 										"method": "POST",
 										"header": [],
 										"body": {
@@ -5194,21 +5224,6 @@
 										}
 									],
 									"request": {
-										"auth": {
-											"type": "apikey",
-											"apikey": [
-												{
-													"key": "value",
-													"value": "{{Token}}",
-													"type": "string"
-												},
-												{
-													"key": "key",
-													"value": "Authorization",
-													"type": "string"
-												}
-											]
-										},
 										"method": "POST",
 										"header": [],
 										"body": {
@@ -5272,21 +5287,6 @@
 										}
 									],
 									"request": {
-										"auth": {
-											"type": "apikey",
-											"apikey": [
-												{
-													"key": "value",
-													"value": "{{TokenUser}}",
-													"type": "string"
-												},
-												{
-													"key": "key",
-													"value": "Authorization",
-													"type": "string"
-												}
-											]
-										},
 										"method": "POST",
 										"header": [],
 										"body": {
@@ -5440,13 +5440,33 @@
 					"name": "Exceptions",
 					"item": [
 						{
-							"name": "Cadastrar carrinho - carrinho duplicado",
+							"name": "Cadastrar carrinho em duplicidade",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 400\", () => {\r",
+											"    pm.response.to.have.status(400)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message error add cart\", () => {\r",
+											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgCartDuplicated\"))\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"produtos\": [\r\n    {\r\n      \"idProduto\": \"BeeJh5lz3k6kSIzA\",\r\n      \"quantidade\": 1\r\n    },\r\n    {\r\n      \"idProduto\": \"YaeJ455lz3k6kSIzA\",\r\n      \"quantidade\": 3\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"produtos\": [\r\n    {\r\n      \"idProduto\": \"{{ProductIdDuplicate}}\",\r\n      \"quantidade\": 1\r\n    },\r\n    {\r\n      \"idProduto\": \"{{ProductIdDuplicate2}}\",\r\n      \"quantidade\": 3\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5454,9 +5474,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/carrinhos",
+									"raw": "{{BaseUrl}}/carrinhos",
 									"host": [
-										"{{baseUrl}}"
+										"{{BaseUrl}}"
 									],
 									"path": [
 										"carrinhos"
@@ -5466,13 +5486,33 @@
 							"response": []
 						},
 						{
-							"name": "Cadastrar carrinho - produto duplicado",
+							"name": "Cadastrar carrinho com produto inválido",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 400\", () => {\r",
+											"    pm.response.to.have.status(400)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message error add cart\", () => {\r",
+											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductNotFound\"))\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"produtos\": [\r\n    {\r\n      \"idProduto\": \"BeeJh5lz3k6kSIzA\",\r\n      \"quantidade\": 1\r\n    },\r\n     {\r\n      \"idProduto\": \"BeeJh5lz3k6kSIzA\",\r\n      \"quantidade\": 1\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"produtos\": [\r\n     {\r\n      \"idProduto\": \"{{InvalidProductId}}\",\r\n      \"quantidade\": 3\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5480,9 +5520,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/carrinhos",
+									"raw": "{{BaseUrl}}/carrinhos",
 									"host": [
-										"{{baseUrl}}"
+										"{{BaseUrl}}"
 									],
 									"path": [
 										"carrinhos"
@@ -5492,13 +5532,51 @@
 							"response": []
 						},
 						{
-							"name": "Cadastrar carrinho - produto inválido",
+							"name": "Cadastrar carrinho sem informar o token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 401\", () => {\r",
+											"    pm.response.to.have.status(401)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message error add cart\", () => {\r",
+											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgErrorToken\"))\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function generateQuantityProductCart() {\r",
+											"    // Gera uma quantidade aleatória entre 1 e 20\r",
+											"    return Math.floor(Math.random() * 20) + 1;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"QuantityProductCart\", generateQuantityProductCart())"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"produtos\": [\r\n     {\r\n      \"idProduto\": \"YaeJ455lz3k6kSI\",\r\n      \"quantidade\": 3\r\n    }\r\n  ]\r\n}",
+									"raw": "{\r\n  \"produtos\": [\r\n    {\r\n      \"idProduto\": \"{{ProductId}}\",\r\n      \"quantidade\": {{QuantityProductCart}}\r\n    },\r\n    {\r\n      \"idProduto\": \"{{ProductId2}}\",\r\n      \"quantidade\": {{QuantityProductCart}}\r\n    }\r\n  ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5506,9 +5584,9 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/carrinhos",
+									"raw": "{{BaseUrl}}/carrinhos",
 									"host": [
-										"{{baseUrl}}"
+										"{{BaseUrl}}"
 									],
 									"path": [
 										"carrinhos"
@@ -5518,66 +5596,34 @@
 							"response": []
 						},
 						{
-							"name": "Cadastrar carrinho - produto zerado no estoque",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"produtos\": [\r\n    {\r\n      \"idProduto\": \"FxnoyJ38v8gfEcr7\",\r\n      \"quantidade\": 1\r\n    },\r\n    ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
+							"name": "Listar carrinhos com id do carrinho inválido como query",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 400\", () => {\r",
+											"    pm.response.to.have.status(400)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message error add cart\", () => {\r",
+											"    pm.expect(data.idCarrinho).to.eql(pm.globals.get(\"MsgCartIdNotAllowed\"))\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
 									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/carrinhos",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"carrinhos"
-									]
 								}
-							},
-							"response": []
-						},
-						{
-							"name": "Cadastrar carrinho - sem informar o token",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"produtos\": [\r\n    {\r\n      \"idProduto\": \"BeeJh5lz3k6kSIzA\",\r\n      \"quantidade\": 1\r\n    },\r\n    {\r\n      \"idProduto\": \"YaeJ455lz3k6kSIzA\",\r\n      \"quantidade\": 3\r\n    }\r\n  ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/carrinhos",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"carrinhos"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Listar carrinhos -  id do carrinho inválido como query",
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/carrinhos?idCarrinho=qbMqntef4iTOwWGF",
+									"raw": "{{BaseUrl}}/carrinhos?idCarrinho={{InvalidCartId}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{BaseUrl}}"
 									],
 									"path": [
 										"carrinhos"
@@ -5585,7 +5631,7 @@
 									"query": [
 										{
 											"key": "idCarrinho",
-											"value": "qbMqntef4iTOwWGF"
+											"value": "{{InvalidCartId}}"
 										}
 									]
 								}
@@ -5593,14 +5639,34 @@
 							"response": []
 						},
 						{
-							"name": "Listar carrinhos - preço total inválido como query",
+							"name": "Listar carrinhos  com preço total inválido como query",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 400\", () => {\r",
+											"    pm.response.to.have.status(400)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message error add cart\", () => {\r",
+											"    pm.expect(data.precoTotal).to.eql(pm.globals.get(\"MsgInvalidTotalPrice\"))\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/carrinhos?precoTotal=0000",
+									"raw": "{{BaseUrl}}/carrinhos?precoTotal={{InvalidTotalPrice}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{BaseUrl}}"
 									],
 									"path": [
 										"carrinhos"
@@ -5608,7 +5674,7 @@
 									"query": [
 										{
 											"key": "precoTotal",
-											"value": "0000"
+											"value": "{{InvalidTotalPrice}}"
 										}
 									]
 								}
@@ -5616,14 +5682,34 @@
 							"response": []
 						},
 						{
-							"name": "Listar carrinhos - sucesso quantidade total  inválida como query",
+							"name": "Listar carrinhos com quantidade total  inválida como query",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 400\", () => {\r",
+											"    pm.response.to.have.status(400)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message error add cart\", () => {\r",
+											"    pm.expect(data.quantidadeTotal).to.eql(pm.globals.get(\"MsgInvalidTotalQuantity\"))\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/carrinhos?quantidadeTotal=0",
+									"raw": "{{BaseUrl}}/carrinhos?quantidadeTotal={{InvalidTotalQuantity}}",
 									"host": [
-										"{{baseUrl}}"
+										"{{BaseUrl}}"
 									],
 									"path": [
 										"carrinhos"
@@ -5631,49 +5717,8 @@
 									"query": [
 										{
 											"key": "quantidadeTotal",
-											"value": "0"
+											"value": "{{InvalidTotalQuantity}}"
 										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Listar carrinhos - sucesso id do usuário inválido como query",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/carrinhos?idUsuario=0uxuPY0cbmQhpEz1",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"carrinhos"
-									],
-									"query": [
-										{
-											"key": "idUsuario",
-											"value": "0uxuPY0cbmQhpEz1"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Buscar carrinho por id - informando id inválido",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{baseUrl}}/carrinhos/qbMqntef4iTOwWfg",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"carrinhos",
-										"qbMqntef4iTOwWfg"
 									]
 								}
 							},
@@ -5681,13 +5726,36 @@
 						},
 						{
 							"name": "Excluir carrinho após finalização da compra -  sem informar o token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 401\", () => {\r",
+											"    pm.response.to.have.status(401)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message error add cart\", () => {\r",
+											"    pm.expect(data.quantidadeTotal).to.eql(pm.globals.get(\"MsgTokenError\"))\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/carrinhos/concluir-compra",
+									"raw": "{{BaseUrl}}/carrinhos/concluir-compra",
 									"host": [
-										"{{baseUrl}}"
+										"{{BaseUrl}}"
 									],
 									"path": [
 										"carrinhos",
@@ -5699,13 +5767,36 @@
 						},
 						{
 							"name": "Excluir carrinho após cancelamento da compra -  sem informar o token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const data = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 401\", () => {\r",
+											"    pm.response.to.have.status(401)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message error add cart\", () => {\r",
+											"    pm.expect(data.quantidadeTotal).to.eql(pm.globals.get(\"MsgTokenError\"))\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/carrinhos/cancelar-compra",
+									"raw": "{{BaseUrl}}/carrinhos/cancelar-compra",
 									"host": [
-										"{{baseUrl}}"
+										"{{BaseUrl}}"
 									],
 									"path": [
 										"carrinhos",
@@ -5864,21 +5955,6 @@
 								}
 							],
 							"request": {
-								"auth": {
-									"type": "apikey",
-									"apikey": [
-										{
-											"key": "value",
-											"value": "{{Token}}",
-											"type": "string"
-										},
-										{
-											"key": "key",
-											"value": "Authorization",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -5922,21 +5998,6 @@
 								}
 							],
 							"request": {
-								"auth": {
-									"type": "apikey",
-									"apikey": [
-										{
-											"key": "value",
-											"value": "{{TokenUser}}",
-											"type": "string"
-										},
-										{
-											"key": "key",
-											"value": "Authorization",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -6148,21 +6209,6 @@
 								}
 							],
 							"request": {
-								"auth": {
-									"type": "apikey",
-									"apikey": [
-										{
-											"key": "value",
-											"value": "{{Token}}",
-											"type": "string"
-										},
-										{
-											"key": "key",
-											"value": "Authorization",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -6206,21 +6252,6 @@
 								}
 							],
 							"request": {
-								"auth": {
-									"type": "apikey",
-									"apikey": [
-										{
-											"key": "value",
-											"value": "{{TokenUser}}",
-											"type": "string"
-										},
-										{
-											"key": "key",
-											"value": "Authorization",
-											"type": "string"
-										}
-									]
-								},
 								"method": "POST",
 								"header": [],
 								"body": {
