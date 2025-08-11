@@ -1,5 +1,7 @@
 <h1 align="center">Teste de API com Postman - ServeRest </h1>
 
+![Projeto ServeRest Postman](./servePostman.png)
+
 ## Descrição do Projeto
 
 <h2 align="center">
