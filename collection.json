@@ -23,20 +23,20 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
-													"pm.environment.set(\"Token\", data.authorization)\r",
+													"pm.environment.set(\"Token\", responseData.authorization)\r",
 													"\r",
 													"pm.test(\"Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
 													"});\r",
 													"\r",
 													"pm.test(\"Verifiy message login sucess\", function () {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Verify token exists\", function () {\r",
-													"    pm.expect(data).to.have.property(\"authorization\");\r",
+													"    pm.expect(responseData).to.have.property(\"authorization\");\r",
 													"});"
 												],
 												"type": "text/javascript",
@@ -80,14 +80,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status code is 401\", function () {\r",
 													"    pm.response.to.have.status(401);\r",
 													"});\r",
 													"\r",
 													"pm.test(\"Verify message error\", function () {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgWrongEmailPassword\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgWrongEmailPassword\"))\r",
 													"})\r",
 													"\r",
 													""
@@ -102,7 +102,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"email\": \"{{EmailInvalid}}\",\r\n  \"password\": \"{{PasswordModel}}\"\r\n}",
+											"raw": "{\r\n  \"email\": \"{{InvalidMail}}\",\r\n  \"password\": \"{{PasswordModel}}\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -128,14 +128,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status code is 400\", function () {\r",
 													"    pm.response.to.have.status(400);\r",
 													"});\r",
 													"\r",
 													"pm.test(\"Verify message error\", function () {\r",
-													"    pm.expect(data.email).to.eql(pm.globals.get(\"MsgEmailEmpty\"))\r",
+													"    pm.expect(responseData.email).to.eql(pm.globals.get(\"MsgEmailEmpty\"))\r",
 													"})\r",
 													"\r",
 													""
@@ -176,14 +176,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status Code is 400\", function (){\r",
 													"    pm.response.to.have.status(400)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Verify message error\", function() {\r",
-													"    pm.expect(data.password).to.eql(pm.globals.get(\"MsgPasswordEmpty\"))\r",
+													"    pm.expect(responseData.password).to.eql(pm.globals.get(\"MsgPasswordEmpty\"))\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -222,14 +222,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status code is 401\", function () {\r",
 													"    pm.response.to.have.status(401);\r",
 													"});\r",
 													"\r",
 													"pm.test(\"Verify message error\", function () {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgWrongEmailPassword\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgWrongEmailPassword\"))\r",
 													"})\r",
 													"\r",
 													""
@@ -244,7 +244,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"email\": \"{{EmailModel}}\",\r\n  \"password\": \"{{PasswordInvalid}}\"\r\n}",
+											"raw": "{\r\n  \"email\": \"{{EmailModel}}\",\r\n  \"password\": \"{{InvalidPassword}}\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -270,14 +270,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status code is 401\", function () {\r",
 													"    pm.response.to.have.status(401);\r",
 													"});\r",
 													"\r",
 													"pm.test(\"Verify message error\", function () {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgWrongEmailPassword\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgWrongEmailPassword\"))\r",
 													"})\r",
 													"\r",
 													""
@@ -292,7 +292,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n  \"email\": \"{{EmailInvalid}}\",\r\n  \"password\": \"{{PasswordInvalid}}\"\r\n}",
+											"raw": "{\r\n  \"email\": \"{{InvalidMail}}\",\r\n  \"password\": \"{{InvalidPassword}}\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -318,15 +318,15 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status Code is 400\", function () {\r",
 													"    pm.response.to.have.status(400)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Verify messages error\", function() {\r",
-													"    pm.expect(data.email).to.eql(pm.globals.get(\"MsgEmailEmpty\"))\r",
-													"    pm.expect(data.password).to.eql(pm.globals.get(\"MsgPasswordEmpty\"))\r",
+													"    pm.expect(responseData.email).to.eql(pm.globals.get(\"MsgEmailEmpty\"))\r",
+													"    pm.expect(responseData.password).to.eql(pm.globals.get(\"MsgPasswordEmpty\"))\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -415,20 +415,20 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.environment.set(\"Token\", data.authorization)\r",
+											"pm.environment.set(\"Token\", responseData.authorization)\r",
 											"\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Verifiy message login sucess\", function () {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify token exists\", function () {\r",
-											"    pm.expect(data).to.have.property(\"authorization\");\r",
+											"    pm.expect(responseData).to.have.property(\"authorization\");\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -597,20 +597,20 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
-													"pm.environment.set(\"UserAdminId\", data._id)\r",
+													"pm.environment.set(\"UserAdminId\", responseData._id)\r",
 													"\r",
 													"pm.test(\"Status Code is 201\", () => {\r",
 													"    pm.response.to.have.status(201)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Verify message sucess\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserCreatedSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserCreatedSucess\"))\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Verify id is not empty\", () => {\r",
-													"    pm.expect(data._id).to.not.be.empty\r",
+													"    pm.expect(responseData._id).to.not.be.empty\r",
 													"})\r",
 													""
 												],
@@ -665,20 +665,20 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
-													"pm.environment.set(\"TokenAdmin\", data.authorization)\r",
+													"pm.environment.set(\"TokenAdmin\", responseData.authorization)\r",
 													"\r",
 													"pm.test(\"Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
 													"});\r",
 													"\r",
 													"pm.test(\"Verifiy message login sucess\", function () {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Verify token exists\", function () {\r",
-													"    pm.expect(data).to.have.property(\"authorization\");\r",
+													"    pm.expect(responseData).to.have.property(\"authorization\");\r",
 													"});"
 												],
 												"type": "text/javascript",
@@ -724,23 +724,23 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Response contains a array\", function () {\r",
-													"    pm.expect(Array.isArray(data.usuarios)).to.be.true;\r",
-													"    pm.expect(data.usuarios.length).to.be.above(0);\r",
+													"    pm.expect(Array.isArray(responseData.usuarios)).to.be.true;\r",
+													"    pm.expect(responseData.usuarios.length).to.be.above(0);\r",
 													"    });\r",
 													"\r",
 													"pm.test(\"Check properties exists and not be null\", () => {\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"nome\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"email\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"password\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"administrador\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"_id\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"nome\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"email\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"password\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"administrador\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"_id\").and.to.not.be.null\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -764,24 +764,80 @@
 									"response": []
 								},
 								{
+									"name": "Listar usuários  admin true com sucesso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const responseData = pm.response.json()\r",
+													"\r",
+													"pm.test(\"Status Code is 200\", () => {\r",
+													"    pm.response.to.have.status(200)\r",
+													"})\r",
+													"\r",
+													"pm.test(\"Response contains a array\", function ()  {\r",
+													"    pm.expect(Array.isArray(responseData.usuarios)).to.be.true;\r",
+													"    pm.expect(responseData.usuarios.length).to.be.above(0);\r",
+													"    });\r",
+													"\r",
+													"pm.test(\"Check properties exists and not be null\", () => {\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"nome\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"email\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"password\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"administrador\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"_id\").and.to.not.be.null\r",
+													"})\r",
+													"\r",
+													"pm.test(\"Verify admin is 'true'\", () => {\r",
+													"    pm.expect(responseData.usuarios[0].administrador).to.eql(\"true\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BaseUrl}}/usuarios?administrador=true",
+											"host": [
+												"{{BaseUrl}}"
+											],
+											"path": [
+												"usuarios"
+											],
+											"query": [
+												{
+													"key": "administrador",
+													"value": "true"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "Buscar usuário por id  com sucesso",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check properties exists and not be null\", () => {\r",
-													"    pm.expect(data).has.a.property(\"nome\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"email\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"password\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"administrador\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"_id\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"nome\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"email\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"password\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"administrador\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"_id\").and.not.be.null\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -829,14 +885,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message updated is sucess\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserUpdatedSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserUpdatedSucess\"))\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -876,18 +932,18 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check properties exists and not be null\", () => {\r",
-													"    pm.expect(data).has.a.property(\"nome\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"email\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"password\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"administrador\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"_id\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"nome\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"email\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"password\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"administrador\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"_id\").and.not.be.null\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -918,14 +974,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Verify message user deleted sucess\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserDeletedSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserDeletedSucess\"))\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -956,14 +1012,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 400\", () => {\r",
 													"    pm.response.to.have.status(400)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message user not found\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserNotFound\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserNotFound\"))\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -1106,20 +1162,20 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
-													"pm.environment.set(\"UserID\", data._id)\r",
+													"pm.environment.set(\"UserID\", responseData._id)\r",
 													"\r",
 													"pm.test(\"Status Code is 201\", () => {\r",
 													"    pm.response.to.have.status(201)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Verify message sucess\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserCreatedSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserCreatedSucess\"))\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Verify id is not empty\", () => {\r",
-													"    pm.expect(data._id).to.not.be.empty\r",
+													"    pm.expect(responseData._id).to.not.be.empty\r",
 													"})\r",
 													""
 												],
@@ -1174,20 +1230,20 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
-													"pm.environment.set(\"TokenUser\", data.authorization)\r",
+													"pm.environment.set(\"TokenUser\", responseData.authorization)\r",
 													"\r",
 													"pm.test(\"Status code is 200\", function () {\r",
 													"    pm.response.to.have.status(200);\r",
 													"});\r",
 													"\r",
 													"pm.test(\"Verifiy message login sucess\", function () {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Verify token exists\", function () {\r",
-													"    pm.expect(data).to.have.property(\"authorization\");\r",
+													"    pm.expect(responseData).to.have.property(\"authorization\");\r",
 													"});"
 												],
 												"type": "text/javascript",
@@ -1226,23 +1282,23 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Response contains a array\", function () {\r",
-													"    pm.expect(Array.isArray(data.usuarios)).to.be.true;\r",
-													"    pm.expect(data.usuarios.length).to.be.above(0);\r",
+													"    pm.expect(Array.isArray(responseData.usuarios)).to.be.true;\r",
+													"    pm.expect(responseData.usuarios.length).to.be.above(0);\r",
 													"    });\r",
 													"\r",
 													"pm.test(\"Check properties exists and not be null\", () => {\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"nome\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"email\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"password\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"administrador\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"_id\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"nome\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"email\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"password\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"administrador\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"_id\").and.to.not.be.null\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -1266,24 +1322,80 @@
 									"response": []
 								},
 								{
+									"name": "Listar usuários  admin false com sucesso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"const responseData = pm.response.json()\r",
+													"\r",
+													"pm.test(\"Status Code is 200\", () => {\r",
+													"    pm.response.to.have.status(200)\r",
+													"})\r",
+													"\r",
+													"pm.test(\"Response contains a array\", function () {\r",
+													"    pm.expect(Array.isArray(responseData.usuarios)).to.be.true;\r",
+													"    pm.expect(responseData.usuarios.length).to.be.above(0);\r",
+													"    });\r",
+													"\r",
+													"pm.test(\"Check properties exists and not be null\", () => {\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"nome\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"email\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"password\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"administrador\").and.to.not.be.null\r",
+													"    pm.expect(responseData.usuarios[0]).to.have.property(\"_id\").and.to.not.be.null\r",
+													"})\r",
+													"\r",
+													"pm.test(\"Verify admin is 'false'\", () => {\r",
+													"    pm.expect(responseData.usuarios[0].administrador).to.eql(\"false\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{BaseUrl}}/usuarios?administrador=false",
+											"host": [
+												"{{BaseUrl}}"
+											],
+											"path": [
+												"usuarios"
+											],
+											"query": [
+												{
+													"key": "administrador",
+													"value": "false"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
 									"name": "Buscar usuário por id  com sucesso",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check properties exists and not be null\", () => {\r",
-													"    pm.expect(data).has.a.property(\"nome\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"email\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"password\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"administrador\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"_id\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"nome\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"email\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"password\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"administrador\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"_id\").and.not.be.null\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -1331,14 +1443,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message updated is sucess\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserUpdatedSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserUpdatedSucess\"))\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -1378,18 +1490,18 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check properties exists and not be null\", () => {\r",
-													"    pm.expect(data).has.a.property(\"nome\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"email\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"password\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"administrador\").and.not.be.null\r",
-													"    pm.expect(data).has.a.property(\"_id\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"nome\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"email\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"password\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"administrador\").and.not.be.null\r",
+													"    pm.expect(responseData).has.a.property(\"_id\").and.not.be.null\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -1420,14 +1532,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Verify message user deleted sucess\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserDeletedSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserDeletedSucess\"))\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -1458,14 +1570,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 400\", () => {\r",
 													"    pm.response.to.have.status(400)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message user not found\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserNotFound\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserNotFound\"))\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -1529,283 +1641,6 @@
 							]
 						},
 						{
-							"name": "Busca de usuário Admin true e false",
-							"item": [
-								{
-									"name": "Cadastrar usuário admin false",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"exec": [
-													"function firstName() {\r",
-													"    const names = [\"Ana\", \"Maria\", \"Joana\", \"Luiza\", \"Beatriz\",\r",
-													"    \"Gabriela\", \"Julia\", \"Luisa\", \"Carolina\", \"Isabel\",\r",
-													"    \"Eduarda\", \"Alice\", \"Laura\", \"Marcela\", \"Rafaela\",\r",
-													"    \"Clarice\", \"Helena\", \"Daniela\", \"Adriana\", \"Patricia\",\r",
-													"    \"Vanessa\", \"Camila\", \"Fernanda\", \"Priscila\", \"Raquel\",\r",
-													"    \"Simone\", \"Andrea\", \"Luciana\", \"Elaine\", \"Monica\",\r",
-													"    \"Silvia\", \"Regina\", \"Claudia\", \"Gisele\", \"Bruna\",\r",
-													"    \"Thais\", \"Yasmin\", \"Nathalia\", \"Sabrina\", \"Vivian\",\r",
-													"    \"Geovana\", \"Francisca\", \"Rosangela\", \"Elizabete\", \"Janaina\",\r",
-													"    \"Marcia\", \"Sandra\", \"Eliane\", \"Denise\", \"Luciene\",\"Pedro\", \"Lucas\", \"Gabriel\",\"Matheus\", \"Guilherme\",  \"Felipe\", \"Bernardo\", \"Rafael\", \"Vinicius\", \"Henrique\",\r",
-													"    \"Leonardo\", \"Enzo\", \"Benjamin\", \"Nicolas\", \"Pietro\",\r",
-													"    \"Murilo\", \"Arthur\", \"Heitor\", \"Bryan\", \"Caio\",\r",
-													"    \"Tiago\", \"Rodrigo\", \"Daniel\", \"Bruno\", \"Victor\",\r",
-													"    \"Alexandre\", \"Paulo\", \"Carlos\", \"Anderson\", \"William\",\r",
-													"    \"Diego\", \"Eduardo\", \"Marcelo\", \"Renan\", \"Leandro\",\r",
-													"    \"Douglas\", \"Thiago\", \"Joao\", \"Felippe\", \"Augusto\",\r",
-													"    \"Otavio\", \"Francisco\", \"Antonio\", \"Juliano\", \"Marco\",\r",
-													"    \"Mario\", \"Roberto\", \"Ricardo\", \"Andre\", \"Fabio\"]\r",
-													"\r",
-													"    const randomNames = names[Math.floor(Math.random() * names.length)]\r",
-													"    return randomNames\r",
-													"}\r",
-													"\r",
-													"pm.environment.set(\"FirstName\", firstName())\r",
-													"\r",
-													"function lastName() {\r",
-													"\r",
-													"    const lastName = [\r",
-													"    \"Silva\", \"Santos\", \"Oliveira\", \"Souza\", \"Rodrigues\",\r",
-													"    \"Alves\", \"Ferreira\", \"Costa\", \"Gomes\", \"Martins\",\r",
-													"    \"Lima\", \"Garcia\", \"Dias\", \"Mendes\", \"Rocha\",\r",
-													"    \"Nunes\", \"Pereira\", \"Carvalho\", \"Sousa\", \"Barbosa\",\r",
-													"    \"Coelho\", \"Cruz\", \"Henrique\", \"Freitas\", \"Monteiro\",\r",
-													"    \"Araujo\", \"Cardoso\", \"Fonseca\", \"Campos\", \"Melo\",\r",
-													"    \"Albuquerque\", \"Andrade\", \"Antunes\", \"Amorim\", \"Azevedo\",\r",
-													"    \"Batista\", \"Bernardes\", \"Botelho\", \"Camargo\", \"Carmo\",\r",
-													"    \"Carvalho\", \"Castro\", \"Coutinho\", \"Couto\", \"Cunha\",\r",
-													"    \"Duarte\", \"Figueiredo\", \"Frota\", \"Furtado\", \"Goncalves\",\r",
-													"    \"Lopes\", \"Machado\", \"Marques\", \"Matos\", \"Medeiros\",\r",
-													"    \"Moraes\", \"Moreira\", \"Moura\", \"Nascimento\", \"Nogueira\",\r",
-													"    \"Oliveira\", \"Pacheco\", \"Paiva\", \"Paula\", \"Pinto\",\r",
-													"    \"Pires\", \"Queiroz\", \"Ramos\", \"Reis\", \"Ribeiro\",\r",
-													"    \"Sampaio\", \"Santana\", \"Santiago\", \"Santos\", \"Severino\",\r",
-													"    \"Siqueira\", \"Soares\", \"Teixeira\", \"Torres\", \"Vasconcelos\",\r",
-													"    \"Vieira\", \"Vilela\", \"Xavier\", \"Abreu\", \"Almeida\",\r",
-													"    \"Alvares\", \"Aragao\", \"Araujo\", \"Barros\", \"Bastos\",\r",
-													"    \"Brito\", \"Cabral\", \"Correia\", \"Correa\", \"Domingues\",\r",
-													"    \"Escobar\", \"Esteves\", \"Faria\", \"Fernandes\", \"Ferraz\",\r",
-													"    \"Franca\", \"Franco\", \"Guedes\", \"Leal\", \"Leite\",\r",
-													"    \"Lopes\", \"Lourenco\", \"Maciel\", \"Magalhaes\", \"Maia\",\r",
-													"    \"Marinho\", \"Mattos\", \"Menezes\", \"Miranda\", \"Moraes\",\r",
-													"    \"Morais\", \"Mourao\", \"Navarro\", \"Neves\", \"Nobre\",\r",
-													"    \"Ochoa\", \"Pessoa\", \"Pinheiro\", \"Porto\", \"Quintela\",\r",
-													"    \"Rangel\", \"Rego\", \"Ribeiro\", \"Rocha\", \"Rosario\",\r",
-													"    \"Sales\", \"Santoro\", \"Saraiva\", \"Sarmento\", \"Seabra\",\r",
-													"    \"Sena\", \"Serra\", \"Serrano\", \"Silveira\", \"Simoes\",\r",
-													"    \"Soeiro\", \"Tavares\", \"Teles\", \"Tenorio\", \"Terra\",\r",
-													"    \"Valente\", \"Valentim\", \"Vargas\", \"Vasques\", \"Veiga\",\r",
-													"    \"Veloso\", \"Viana\", \"Viegas\", \"Vieira\", \"Vila\",\r",
-													"    \"Vilas\", \"Villas\", \"Vital\", \"Zamith\", \"Zanetti\"]\r",
-													"\r",
-													"    const randomLastName = lastName[Math.floor(Math.random() * lastName.length)]\r",
-													"    return randomLastName\r",
-													"}\r",
-													"\r",
-													"pm.environment.set(\"LastName\", lastName())\r",
-													"\r",
-													"pm.environment.set(\"FullName\", pm.environment.get(\"FirstName\") + \" \" + pm.environment.get(\"LastName\"))\r",
-													"\r",
-													"function generateProvedor () {\r",
-													"    const provedor = [\"@yahoo.com.br\", \"@gmail.com\", \"@hotmail.com\", \"@uol.com\", \"@outlook.com\"]\r",
-													"    const randomProvedor = provedor[Math.floor(Math.random() * provedor.length)]\r",
-													"    return randomProvedor\r",
-													"}\r",
-													"pm.environment.set(\"Provedor\", generateProvedor())\r",
-													"\r",
-													"pm.environment.set(\"MailUser\", pm.environment.get(\"FullName\").toLowerCase().replace(/\\s/g, \"\").normalize(\"NFD\").replace(/[\\u0300-\\u036f]/g, \"\")+\"_\"+pm.variables.replaceIn('{{$guid}}' + pm.environment.get(\"Provedor\")))\r",
-													"\r",
-													"function generatePassword(){\r",
-													"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%*\";\r",
-													"    const minLength = 6;\r",
-													"    const maxLength = 12;\r",
-													"\r",
-													"    const length = Math.floor(Math.random() * (maxLength - minLength + 1)) + minLength;\r",
-													"    let password = \"\";\r",
-													"\r",
-													"    for (let i = 0; i < length; i++) {\r",
-													"        const randomIndex = Math.floor(Math.random() * chars.length);\r",
-													"        password += chars[randomIndex];\r",
-													"    }\r",
-													"\r",
-													"    return password;\r",
-													"}\r",
-													"\r",
-													"pm.environment.set(\"PasswordUser\", generatePassword())\r",
-													"\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const data = pm.response.json()\r",
-													"\r",
-													"pm.environment.set(\"UserID\", data._id)\r",
-													"\r",
-													"pm.test(\"Status Code is 201\", () => {\r",
-													"    pm.response.to.have.status(201)\r",
-													"})\r",
-													"\r",
-													"pm.test(\"Verify message sucess\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserCreatedSucess\"))\r",
-													"})\r",
-													"\r",
-													"pm.test(\"Verify id is not empty\", () => {\r",
-													"    pm.expect(data._id).to.not.be.empty\r",
-													"})\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n  \"nome\": \"{{FullName}}\",\r\n  \"email\": \"{{MailUser}}\",\r\n  \"password\": \"{{PasswordUser}}\",\r\n  \"administrador\": \"false\"\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
-												}
-											}
-										},
-										"url": {
-											"raw": "{{BaseUrl}}/usuarios",
-											"host": [
-												"{{BaseUrl}}"
-											],
-											"path": [
-												"usuarios"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Listar usuários  admin true com sucesso",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const data = pm.response.json()\r",
-													"\r",
-													"pm.test(\"Status Code is 200\", () => {\r",
-													"    pm.response.to.have.status(200)\r",
-													"})\r",
-													"\r",
-													"pm.test(\"Response contains a array\", function ()  {\r",
-													"    pm.expect(Array.isArray(data.usuarios)).to.be.true;\r",
-													"    pm.expect(data.usuarios.length).to.be.above(0);\r",
-													"    });\r",
-													"\r",
-													"pm.test(\"Check properties exists and not be null\", () => {\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"nome\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"email\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"password\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"administrador\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"_id\").and.to.not.be.null\r",
-													"})\r",
-													"\r",
-													"pm.test(\"Verify admin is 'true'\", () => {\r",
-													"    pm.expect(data.usuarios[0].administrador).to.eql(\"true\");\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BaseUrl}}/usuarios?administrador=true",
-											"host": [
-												"{{BaseUrl}}"
-											],
-											"path": [
-												"usuarios"
-											],
-											"query": [
-												{
-													"key": "administrador",
-													"value": "true"
-												}
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Listar usuários  admin false com sucesso",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const data = pm.response.json()\r",
-													"\r",
-													"pm.test(\"Status Code is 200\", () => {\r",
-													"    pm.response.to.have.status(200)\r",
-													"})\r",
-													"\r",
-													"pm.test(\"Response contains a array\", function () {\r",
-													"    pm.expect(Array.isArray(data.usuarios)).to.be.true;\r",
-													"    pm.expect(data.usuarios.length).to.be.above(0);\r",
-													"    });\r",
-													"\r",
-													"pm.test(\"Check properties exists and not be null\", () => {\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"nome\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"email\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"password\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"administrador\").and.to.not.be.null\r",
-													"    pm.expect(data.usuarios[0]).to.have.property(\"_id\").and.to.not.be.null\r",
-													"})\r",
-													"\r",
-													"pm.test(\"Verify admin is 'false'\", () => {\r",
-													"    pm.expect(data.usuarios[0].administrador).to.eql(\"false\");\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BaseUrl}}/usuarios?administrador=false",
-											"host": [
-												"{{BaseUrl}}"
-											],
-											"path": [
-												"usuarios"
-											],
-											"query": [
-												{
-													"key": "administrador",
-													"value": "false"
-												}
-											]
-										}
-									},
-									"response": []
-								}
-							]
-						},
-						{
 							"name": "Exceptions",
 							"item": [
 								{
@@ -1815,14 +1650,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 400\", () => {\r",
 													"    pm.response.to.have.status(400)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message e-mail exists\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgEmailExists\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgEmailExists\"))\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -1855,149 +1690,20 @@
 									"response": []
 								},
 								{
-									"name": "Listar usuários  informando o id inválido como query",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const data = pm.response.json()\r",
-													"\r",
-													"pm.test(\"Check Status Code is 400\", () => {\r",
-													"    pm.response.to.have.status(400)\r",
-													"})\r",
-													"\r",
-													"pm.test(\"Check message error id\", () => {\r",
-													"    pm.expect(data.id).to.eql(pm.globals.get(\"MsgIdIsNotAllowed\"))\r",
-													"})"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BaseUrl}}/usuarios?id={{InvalidId}}",
-											"host": [
-												"{{BaseUrl}}"
-											],
-											"path": [
-												"usuarios"
-											],
-											"query": [
-												{
-													"key": "id",
-													"value": "{{InvalidId}}"
-												}
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Listar usuários informando o e-mail inválido como query",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const data = pm.response.json()\r",
-													"\r",
-													"pm.test(\"Check Status Code is 400\", () => {\r",
-													"    pm.response.to.have.status(400)\r",
-													"})\r",
-													"\r",
-													"pm.test(\"Check message error e-mail\", () => {\r",
-													"    pm.expect(data[\"e-mail\"]).to.eql(pm.globals.get(\"MsgEmailIsNotAllowed\"))\r",
-													"})"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BaseUrl}}/usuarios?e-mail={{InvalidMail}}",
-											"host": [
-												"{{BaseUrl}}"
-											],
-											"path": [
-												"usuarios"
-											],
-											"query": [
-												{
-													"key": "e-mail",
-													"value": "{{InvalidMail}}"
-												}
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Listar usuários  informando a senha inválida como query",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"exec": [
-													"const data = pm.response.json()\r",
-													"\r",
-													"pm.test(\"Check Status Code is 400\", () => {\r",
-													"    pm.response.to.have.status(400)\r",
-													"})\r",
-													"\r",
-													"pm.test(\"Check message error password\", () => {\r",
-													"    pm.expect(data.senha).to.eql(pm.globals.get(\"MsgPasswordIsNotAllowed\"))\r",
-													"})"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{BaseUrl}}/usuarios?senha={{InvalidPassword}}",
-											"host": [
-												"{{BaseUrl}}"
-											],
-											"path": [
-												"usuarios"
-											],
-											"query": [
-												{
-													"key": "senha",
-													"value": "{{InvalidPassword}}"
-												}
-											]
-										}
-									},
-									"response": []
-								},
-								{
 									"name": "Buscar usuário por id  id inválido",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 400\", () => {\r",
 													"    pm.response.to.have.status(400)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message error id\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgInvalidId\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgInvalidId\"))\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -2028,14 +1734,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Status Code is 400\", () => {\r",
 													"    pm.response.to.have.status(400)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message error\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgEmailExists\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgEmailExists\"))\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -2078,13 +1784,13 @@
 				"type": "apikey",
 				"apikey": [
 					{
-						"key": "value",
-						"value": "{{TokenAdmin}}",
+						"key": "key",
+						"value": "Authorization",
 						"type": "string"
 					},
 					{
-						"key": "key",
-						"value": "authorization",
+						"key": "value",
+						"value": "{{TokenAdmin}}",
 						"type": "string"
 					}
 				]
@@ -2125,20 +1831,20 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.environment.set(\"Token\", data.authorization)\r",
+											"pm.environment.set(\"Token\", responseData.authorization)\r",
 											"\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Verifiy message login sucess\", function () {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify token exists\", function () {\r",
-											"    pm.expect(data).to.have.property(\"authorization\");\r",
+											"    pm.expect(responseData).to.have.property(\"authorization\");\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -2299,20 +2005,20 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.environment.set(\"UserAdminId\", data._id)\r",
+											"pm.environment.set(\"UserAdminId\", responseData._id)\r",
 											"\r",
 											"pm.test(\"Status Code is 201\", () => {\r",
 											"    pm.response.to.have.status(201)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify message sucess\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserCreatedSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserCreatedSucess\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify id is not empty\", () => {\r",
-											"    pm.expect(data._id).to.not.be.empty\r",
+											"    pm.expect(responseData._id).to.not.be.empty\r",
 											"})\r",
 											""
 										],
@@ -2367,20 +2073,20 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.environment.set(\"TokenAdmin\", data.authorization)\r",
+											"pm.environment.set(\"TokenAdmin\", responseData.authorization)\r",
 											"\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Verifiy message login sucess\", function () {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify token exists\", function () {\r",
-											"    pm.expect(data).to.have.property(\"authorization\");\r",
+											"    pm.expect(responseData).to.have.property(\"authorization\");\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -2473,9 +2179,11 @@
 											"    return randomNames\r",
 											"}\r",
 											"\r",
+											"const randomNumber = Math.floor(Math.random() * 9000) + 1000\r",
+											"\r",
 											"pm.environment.set(\"ProductSecondName\", productsSecondName())\r",
 											"\r",
-											"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\"))\r",
+											"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\") + \" \" + randomNumber)\r",
 											"\r",
 											"function priceProduct() {\r",
 											"    return Math.round(Math.random() * (12999.99 - 9.99) + 9.99);\r",
@@ -2546,20 +2254,20 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.environment.set(\"ProductId\", data._id)\r",
+											"pm.environment.set(\"ProductId\", responseData._id)\r",
 											"\r",
 											"pm.test(\"Check Status Code is 201\", () => {\r",
 											"    pm.response.to.have.status(201)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message product was successsfully registered\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check id is not null\", () => {\r",
-											"    pm.expect(data._id).to.not.be.null\r",
+											"    pm.expect(responseData._id).to.not.be.null\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -2598,18 +2306,18 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 200\", () => {\r",
 											"    pm.response.to.have.status(200)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check properties exists and not be null\", () => {\r",
-											"    pm.expect(data.produtos[0]).to.have.property(\"nome\").and.to.not.be.null\r",
-											"    pm.expect(data.produtos[0]).to.have.property(\"preco\").and.to.not.be.null\r",
-											"    pm.expect(data.produtos[0]).to.have.property(\"descricao\").and.to.not.be.null\r",
-											"    pm.expect(data.produtos[0]).to.have.property(\"quantidade\").and.to.not.be.null\r",
-											"    pm.expect(data.produtos[0]).to.have.property(\"_id\").and.to.not.be.null\r",
+											"    pm.expect(responseData.produtos[0]).to.have.property(\"nome\").and.to.not.be.null\r",
+											"    pm.expect(responseData.produtos[0]).to.have.property(\"preco\").and.to.not.be.null\r",
+											"    pm.expect(responseData.produtos[0]).to.have.property(\"descricao\").and.to.not.be.null\r",
+											"    pm.expect(responseData.produtos[0]).to.have.property(\"quantidade\").and.to.not.be.null\r",
+											"    pm.expect(responseData.produtos[0]).to.have.property(\"_id\").and.to.not.be.null\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -2639,18 +2347,18 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 200\", () => {\r",
 											"    pm.response.to.have.status(200)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check properties exists and not be null\", () => {\r",
-											"    pm.expect(data).to.have.property(\"nome\").and.to.not.be.null\r",
-											"    pm.expect(data).to.have.property(\"preco\").and.to.not.be.null\r",
-											"    pm.expect(data).to.have.property(\"descricao\").and.to.not.be.null\r",
-											"    pm.expect(data).to.have.property(\"quantidade\").and.to.not.be.null\r",
-											"    pm.expect(data).to.have.property(\"_id\").and.to.not.be.null\r",
+											"    pm.expect(responseData).to.have.property(\"nome\").and.to.not.be.null\r",
+											"    pm.expect(responseData).to.have.property(\"preco\").and.to.not.be.null\r",
+											"    pm.expect(responseData).to.have.property(\"descricao\").and.to.not.be.null\r",
+											"    pm.expect(responseData).to.have.property(\"quantidade\").and.to.not.be.null\r",
+											"    pm.expect(responseData).to.have.property(\"_id\").and.to.not.be.null\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -2695,14 +2403,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 200\", () => {\r",
 											"    pm.response.to.have.status(200)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message updated sucess\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductUpdatedSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductUpdatedSucess\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -2742,18 +2450,18 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 200\", () => {\r",
 											"    pm.response.to.have.status(200)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check properties exists and not be null\", () => {\r",
-											"    pm.expect(data).to.have.property(\"nome\").and.to.not.be.null\r",
-											"    pm.expect(data).to.have.property(\"preco\").and.to.not.be.null\r",
-											"    pm.expect(data).to.have.property(\"descricao\").and.to.not.be.null\r",
-											"    pm.expect(data).to.have.property(\"quantidade\").and.to.not.be.null\r",
-											"    pm.expect(data).to.have.property(\"_id\").and.to.not.be.null\r",
+											"    pm.expect(responseData).to.have.property(\"nome\").and.to.not.be.null\r",
+											"    pm.expect(responseData).to.have.property(\"preco\").and.to.not.be.null\r",
+											"    pm.expect(responseData).to.have.property(\"descricao\").and.to.not.be.null\r",
+											"    pm.expect(responseData).to.have.property(\"quantidade\").and.to.not.be.null\r",
+											"    pm.expect(responseData).to.have.property(\"_id\").and.to.not.be.null\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -2784,14 +2492,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 200\", () => {\r",
 											"    pm.response.to.have.status(200)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message deleted sucess\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductDeletedSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductDeletedSucess\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -2822,14 +2530,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 400\", () => {\r",
 											"    pm.response.to.have.status(400)\r",
 											"})\r",
 											"\r",
 											"/*pm.test(\"Check message user not found\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"\"))\r",
 											"})*/"
 										],
 										"type": "text/javascript",
@@ -2865,14 +2573,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 400\", () => {\r",
 											"    pm.response.to.have.status(400)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message product duplicated\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductDuplicated\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductDuplicated\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -2883,6 +2591,54 @@
 									"listen": "prerequest",
 									"script": {
 										"exec": [
+											"function productsFirstName() {\r",
+											"    const names = [   \r",
+											"    \"Purezza\", \"FreshX\", \"GlowStar\", \"ShinePro\", \"BloomX\",\r",
+											"    \"Radiance\", \"PurityPro\", \"EssenceX\", \"Natureza\", \"Harmonia\",\r",
+											"    \"Balance\", \"Wellness\", \"Vitality\", \"BeautyPro\", \"CareMax\",\r",
+											"    \"BioStar\", \"Organix\", \"FreshPro\", \"GreenX\", \"Naturalis\",\r",
+											"    \"MakePro\", \"ColorX\", \"ShadePro\", \"ToneMax\", \"HueStar\",\r",
+											"    \"Pigmenta\", \"ChromaX\", \"TintPro\", \"ShinePlus\", \"GlowMax\",\r",
+											"    \"BeautyX\", \"FacePro\", \"LookMax\", \"StylePro\", \"ChicStar\",\r",
+											"    \"TreatmentPro\", \"CarePlus\", \"HealMax\", \"RepairX\", \"RenewPro\",\r",
+											"    \"RestoreStar\", \"RevivePlus\", \"RejuvenX\", \"YouthPro\", \"VitalX\",\r",
+											"    \"PurePro\", \"CleanMax\", \"FreshStar\", \"PuriPlus\", \"ClaroX\",\r",
+											"    \"ElitePro\", \"LuxStar\", \"PremiumX\", \"SupremePro\", \"UltraMax\",\r",
+											"    \"ExclusivePlus\", \"RoyalStar\", \"DiamondX\", \"GoldPro\", \"PlatinumPlus\"\r",
+											"    ]\r",
+											"\r",
+											"    const randomNames = names[Math.floor(Math.random() * names.length)]\r",
+											"    return randomNames\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"ProductFirstName\", productsFirstName())\r",
+											"\r",
+											"function productsSecondName() {\r",
+											"    const names = [   \r",
+											"    \"Purezza\", \"FreshX\", \"GlowStar\", \"ShinePro\", \"BloomX\",\r",
+											"    \"Radiance\", \"PurityPro\", \"EssenceX\", \"Natureza\", \"Harmonia\",\r",
+											"    \"Balance\", \"Wellness\", \"Vitality\", \"BeautyPro\", \"CareMax\",\r",
+											"    \"BioStar\", \"Organix\", \"FreshPro\", \"GreenX\", \"Naturalis\",\r",
+											"    \"MakePro\", \"ColorX\", \"ShadePro\", \"ToneMax\", \"HueStar\",\r",
+											"    \"Pigmenta\", \"ChromaX\", \"TintPro\", \"ShinePlus\", \"GlowMax\",\r",
+											"    \"BeautyX\", \"FacePro\", \"LookMax\", \"StylePro\", \"ChicStar\",\r",
+											"    \"TreatmentPro\", \"CarePlus\", \"HealMax\", \"RepairX\", \"RenewPro\",\r",
+											"    \"RestoreStar\", \"RevivePlus\", \"RejuvenX\", \"YouthPro\", \"VitalX\",\r",
+											"    \"PurePro\", \"CleanMax\", \"FreshStar\", \"PuriPlus\", \"ClaroX\",\r",
+											"    \"ElitePro\", \"LuxStar\", \"PremiumX\", \"SupremePro\", \"UltraMax\",\r",
+											"    \"ExclusivePlus\", \"RoyalStar\", \"DiamondX\", \"GoldPro\", \"PlatinumPlus\"\r",
+											"    ]\r",
+											"\r",
+											"    const randomNames = names[Math.floor(Math.random() * names.length)]\r",
+											"    return randomNames\r",
+											"}\r",
+											"\r",
+											"const randomNumber = Math.floor(Math.random() * 9000) + 1000\r",
+											"\r",
+											"pm.environment.set(\"ProductSecondName\", productsSecondName())\r",
+											"\r",
+											"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\") + \" \" + randomNumber)\r",
+											"\r",
 											"function priceProduct() {\r",
 											"    return Math.round(Math.random() * (12999.99 - 9.99) + 9.99);\r",
 											"}\r",
@@ -3022,9 +2778,11 @@
 											"    return randomNames\r",
 											"}\r",
 											"\r",
+											"const randomNumber = Math.floor(Math.random() * 9000) + 1000\r",
+											"\r",
 											"pm.environment.set(\"ProductSecondName\", productsSecondName())\r",
 											"\r",
-											"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\"))\r",
+											"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\") + \" \" + randomNumber)\r",
 											"\r",
 											"function priceProduct() {\r",
 											"    return Math.round(Math.random() * (12999.99 - 9.99) + 9.99);\r",
@@ -3095,14 +2853,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 401\", () => {\r",
 											"    pm.response.to.have.status(401)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message product without token\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgErrorToken\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgErrorToken\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -3144,14 +2902,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 400\", () => {\r",
 											"    pm.response.to.have.status(400)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message invalid price\", () => {\r",
-											"    pm.expect(data.preco).to.eql(pm.globals.get(\"MsgInvalidPrice\"))\r",
+											"    pm.expect(responseData.preco).to.eql(pm.globals.get(\"MsgInvalidPrice\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -3187,14 +2945,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 400\", () => {\r",
 											"    pm.response.to.have.status(400)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message invalid quantity\", () => {\r",
-											"    pm.expect(data.quantidade).to.eql(pm.globals.get(\"MsgInvalidQuantity\"))\r",
+											"    pm.expect(responseData.quantidade).to.eql(pm.globals.get(\"MsgInvalidQuantity\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -3224,49 +2982,6 @@
 							"response": []
 						},
 						{
-							"name": "Listar produtos utilizando id inválido por query",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"const data = pm.response.json()\r",
-											"\r",
-											"pm.test(\"Check Status Code is 400\", () => {\r",
-											"    pm.response.to.have.status(400)\r",
-											"})\r",
-											"\r",
-											"pm.test(\"Check message invalid id\", () => {\r",
-											"    pm.expect(data.id).to.eql(pm.globals.get(\"MsgInvalidProductId\"))\r",
-											"})"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{BaseUrl}}/produtos?id={{InvalidProductId}}",
-									"host": [
-										"{{BaseUrl}}"
-									],
-									"path": [
-										"produtos"
-									],
-									"query": [
-										{
-											"key": "id",
-											"value": "{{InvalidProductId}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Atualizar produto sem informar um token",
 							"event": [
 								{
@@ -3287,14 +3002,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 401\", () => {\r",
 											"    pm.response.to.have.status(401)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message invalid token\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgErrorToken\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgErrorToken\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -3337,14 +3052,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 401\", () => {\r",
 											"    pm.response.to.have.status(401)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message invalid token\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgErrorToken\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgErrorToken\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -3451,7 +3166,7 @@
 											"\r",
 											"pm.environment.set(\"LastName\", lastName())\r",
 											"\r",
-											"pm.environment.set(\"FullNameUser\", pm.environment.get(\"FirstName\") + \" \" + pm.environment.get(\"LastName\"))\r",
+											"pm.environment.set(\"FullNameUserAdmin\", pm.environment.get(\"FirstName\") + \" \" + pm.environment.get(\"LastName\"))\r",
 											"\r",
 											"function generateProvedor () {\r",
 											"    const provedor = [\"@yahoo.com.br\", \"@gmail.com\", \"@hotmail.com\", \"@uol.com\", \"@outlook.com\"]\r",
@@ -3460,7 +3175,7 @@
 											"}\r",
 											"pm.environment.set(\"Provedor\", generateProvedor())\r",
 											"\r",
-											"pm.environment.set(\"MailUser\", pm.environment.get(\"FullName\").toLowerCase().replace(/\\s/g, \"\").normalize(\"NFD\").replace(/[\\u0300-\\u036f]/g, \"\")+\"_\"+pm.variables.replaceIn('{{$guid}}' + pm.environment.get(\"Provedor\")))\r",
+											"pm.environment.set(\"MailUserAdmin\", pm.environment.get(\"FullName\").toLowerCase().replace(/\\s/g, \"\").normalize(\"NFD\").replace(/[\\u0300-\\u036f]/g, \"\")+\"_\"+pm.variables.replaceIn('{{$guid}}' + pm.environment.get(\"Provedor\")))\r",
 											"\r",
 											"function generatePassword(){\r",
 											"    const chars = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%*\";\r",
@@ -3478,7 +3193,7 @@
 											"    return password;\r",
 											"}\r",
 											"\r",
-											"pm.environment.set(\"PasswordUser\", generatePassword())\r",
+											"pm.environment.set(\"PasswordUserAdmin\", generatePassword())\r",
 											"\r",
 											""
 										],
@@ -3490,20 +3205,20 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.environment.set(\"UserID\", data._id)\r",
+											"pm.environment.set(\"UserID\", responseData._id)\r",
 											"\r",
 											"pm.test(\"Status Code is 201\", () => {\r",
 											"    pm.response.to.have.status(201)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify message sucess\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserCreatedSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserCreatedSucess\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify id is not empty\", () => {\r",
-											"    pm.expect(data._id).to.not.be.empty\r",
+											"    pm.expect(responseData._id).to.not.be.empty\r",
 											"})\r",
 											""
 										],
@@ -3558,20 +3273,20 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.environment.set(\"TokenUser\", data.authorization)\r",
+											"pm.environment.set(\"TokenUser\", responseData.authorization)\r",
 											"\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Verifiy message login sucess\", function () {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify token exists\", function () {\r",
-											"    pm.expect(data).to.have.property(\"authorization\");\r",
+											"    pm.expect(responseData).to.have.property(\"authorization\");\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -3580,6 +3295,21 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "value",
+											"value": "{{TokenUser}}",
+											"type": "string"
+										},
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -3652,9 +3382,11 @@
 											"    return randomNames\r",
 											"}\r",
 											"\r",
+											"const randomNumber = Math.floor(Math.random() * 9000) + 1000\r",
+											"\r",
 											"pm.environment.set(\"ProductSecondName\", productsSecondName())\r",
 											"\r",
-											"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\"))\r",
+											"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\") + \" \" + randomNumber)\r",
 											"\r",
 											"function priceProduct() {\r",
 											"    return Math.round(Math.random() * (12999.99 - 9.99) + 9.99);\r",
@@ -3725,14 +3457,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.test(\"Check Status Code is 401\", () => {\r",
-											"    pm.response.to.have.status(401)\r",
+											"pm.test(\"Check Status Code is 403\", () => {\r",
+											"    pm.response.to.have.status(403)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message user admin false\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgErrorToken\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgRouteAdmin\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -3800,14 +3532,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.test(\"Check Status Code is 401\", () => {\r",
-											"    pm.response.to.have.status(401)\r",
+											"pm.test(\"Check Status Code is 403\", () => {\r",
+											"    pm.response.to.have.status(403)\r",
 											"})\r",
 											"\r",
-											"pm.test(\"Check message invalid token\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgErrorToken\"))\r",
+											"pm.test(\"Check message user admin false\", () => {\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgRouteAdmin\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -3862,14 +3594,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.test(\"Check Status Code is 401\", () => {\r",
-											"    pm.response.to.have.status(401)\r",
+											"pm.test(\"Check Status Code is 403\", () => {\r",
+											"    pm.response.to.have.status(403)\r",
 											"})\r",
 											"\r",
-											"pm.test(\"Check message invalid token\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgErrorToken\"))\r",
+											"pm.test(\"Check message user admin false\", () => {\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgRouteAdmin\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -3920,14 +3652,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 200\", () => {\r",
 											"    pm.response.to.have.status(200)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify message user deleted sucess\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserDeletedSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserDeletedSucess\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -3958,14 +3690,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 200\", () => {\r",
 											"    pm.response.to.have.status(200)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify message user deleted sucess\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserDeletedSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserDeletedSucess\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -3997,13 +3729,13 @@
 				"type": "apikey",
 				"apikey": [
 					{
-						"key": "value",
-						"value": "{{TokenAdmin}}",
+						"key": "key",
+						"value": "Authorization",
 						"type": "string"
 					},
 					{
-						"key": "key",
-						"value": "authorizaton",
+						"key": "value",
+						"value": "{{TokenAdmin}}",
 						"type": "string"
 					}
 				]
@@ -4044,20 +3776,20 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.environment.set(\"Token\", data.authorization)\r",
+											"pm.environment.set(\"Token\", responseData.authorization)\r",
 											"\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Verifiy message login sucess\", function () {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify token exists\", function () {\r",
-											"    pm.expect(data).to.have.property(\"authorization\");\r",
+											"    pm.expect(responseData).to.have.property(\"authorization\");\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -4218,20 +3950,20 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.environment.set(\"UserAdminId\", data._id)\r",
+											"pm.environment.set(\"UserAdminId\", responseData._id)\r",
 											"\r",
 											"pm.test(\"Status Code is 201\", () => {\r",
 											"    pm.response.to.have.status(201)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify message sucess\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserCreatedSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserCreatedSucess\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify id is not empty\", () => {\r",
-											"    pm.expect(data._id).to.not.be.empty\r",
+											"    pm.expect(responseData._id).to.not.be.empty\r",
 											"})\r",
 											""
 										],
@@ -4286,20 +4018,20 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.environment.set(\"TokenAdmin\", data.authorization)\r",
+											"pm.environment.set(\"TokenAdmin\", responseData.authorization)\r",
 											"\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Verifiy message login sucess\", function () {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgLoginSucess\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Verify token exists\", function () {\r",
-											"    pm.expect(data).to.have.property(\"authorization\");\r",
+											"    pm.expect(responseData).to.have.property(\"authorization\");\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -4395,9 +4127,11 @@
 													"    return randomNames\r",
 													"}\r",
 													"\r",
+													"const randomNumber = Math.floor(Math.random() * 9000) + 1000\r",
+													"\r",
 													"pm.environment.set(\"ProductSecondName\", productsSecondName())\r",
 													"\r",
-													"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\"))\r",
+													"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\") + \" \" + randomNumber)\r",
 													"\r",
 													"function priceProduct() {\r",
 													"    return Math.round(Math.random() * (12999.99 - 9.99) + 9.99);\r",
@@ -4468,20 +4202,20 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
-													"pm.environment.set(\"ProductId\", data._id)\r",
+													"pm.environment.set(\"ProductId\", responseData._id)\r",
 													"\r",
 													"pm.test(\"Check Status Code is 201\", () => {\r",
 													"    pm.response.to.have.status(201)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message product was successsfully registered\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check id is not null\", () => {\r",
-													"    pm.expect(data._id).to.not.be.null\r",
+													"    pm.expect(responseData._id).to.not.be.null\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -4540,7 +4274,7 @@
 													"    return randomNames\r",
 													"}\r",
 													"\r",
-													"pm.environment.set(\"ProductFirstName2\", productsFirstName())\r",
+													"pm.environment.set(\"ProductFirstName\", productsFirstName())\r",
 													"\r",
 													"function productsSecondName() {\r",
 													"    const names = [   \r",
@@ -4562,15 +4296,17 @@
 													"    return randomNames\r",
 													"}\r",
 													"\r",
-													"pm.environment.set(\"ProductSecondName2\", productsSecondName())\r",
+													"const randomNumber = Math.floor(Math.random() * 9000) + 1000\r",
 													"\r",
-													"pm.environment.set(\"Product2\", pm.environment.get(\"ProductFirstName2\") + \" \" + pm.environment.get(\"ProductSecondName2\"))\r",
+													"pm.environment.set(\"ProductSecondName\", productsSecondName())\r",
+													"\r",
+													"pm.environment.set(\"Product2\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\") + \" \" + randomNumber)\r",
 													"\r",
 													"function priceProduct() {\r",
 													"    return Math.round(Math.random() * (12999.99 - 9.99) + 9.99);\r",
 													"}\r",
 													"\r",
-													"pm.environment.set(\"PriceProduct2\", priceProduct())\r",
+													"pm.environment.set(\"PriceProduct\", priceProduct())\r",
 													"\r",
 													"function productDescription() {\r",
 													"    const description = [   \"Fórmula inovadora para resultados visíveis e duradouros\",\r",
@@ -4618,14 +4354,14 @@
 													"    return randomDescription\r",
 													"}\r",
 													"\r",
-													"pm.environment.set(\"ProductDescription2\", productDescription())\r",
+													"pm.environment.set(\"ProductDescription\", productDescription())\r",
 													"\r",
 													"function generateStock() {\r",
 													"    // Gera uma quantidade aleatória entre 1 e 1000\r",
 													"    return Math.floor(Math.random() * 1000) + 1;\r",
 													"}\r",
 													"\r",
-													"pm.environment.set(\"ProductQuantity2\", generateStock())"
+													"pm.environment.set(\"ProductQuantity\", generateStock())"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -4635,20 +4371,20 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
-													"pm.environment.set(\"ProductId2\", data._id)\r",
+													"pm.environment.set(\"ProductId2\", responseData._id)\r",
 													"\r",
 													"pm.test(\"Check Status Code is 201\", () => {\r",
 													"    pm.response.to.have.status(201)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message product was successsfully registered\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check id is not null\", () => {\r",
-													"    pm.expect(data._id).to.not.be.null\r",
+													"    pm.expect(responseData._id).to.not.be.null\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -4702,16 +4438,16 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 201\", () => {\r",
 													"    pm.response.to.have.status(201)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check cart created\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgCartCreated\"))\r",
-													"    pm.expect(data).to.have.property(\"_id\").and.to.not.be.null\r",
-													"    pm.environment.set(\"CartId\", data._id)\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgCartCreated\"))\r",
+													"    pm.expect(responseData).to.have.property(\"_id\").and.to.not.be.null\r",
+													"    pm.environment.set(\"CartId\", responseData._id)\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -4750,18 +4486,18 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check cart list have a property end not null\", () => {\r",
-													"    pm.expect(data.carrinhos[0].produtos[0]).to.have.property(\"idProduto\").and.to.not.be.null\r",
+													"    pm.expect(responseData.carrinhos[0].produtos[0]).to.have.property(\"idProduto\").and.to.not.be.null\r",
 													"\r",
-													"    pm.expect(data.carrinhos[0].produtos[0]).to.have.property(\"quantidade\").and.to.not.be.null\r",
+													"    pm.expect(responseData.carrinhos[0].produtos[0]).to.have.property(\"quantidade\").and.to.not.be.null\r",
 													"   \r",
-													"   pm.expect(data.carrinhos[0].produtos[0]).to.have.property(\"precoUnitario\").and.to.not.be.null\r",
+													"   pm.expect(responseData.carrinhos[0].produtos[0]).to.have.property(\"precoUnitario\").and.to.not.be.null\r",
 													"   \r",
 													"   \r",
 													"})"
@@ -4793,18 +4529,18 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check cart list have a property end not null\", () => {\r",
-													"    pm.expect(data.produtos[0]).to.have.property(\"idProduto\").and.to.not.be.null\r",
+													"    pm.expect(responseData.produtos[0]).to.have.property(\"idProduto\").and.to.not.be.null\r",
 													"\r",
-													"    pm.expect(data.produtos[0]).to.have.property(\"quantidade\").and.to.not.be.null\r",
+													"    pm.expect(responseData.produtos[0]).to.have.property(\"quantidade\").and.to.not.be.null\r",
 													"   \r",
-													"   pm.expect(data.produtos[0]).to.have.property(\"precoUnitario\").and.to.not.be.null\r",
+													"   pm.expect(responseData.produtos[0]).to.have.property(\"precoUnitario\").and.to.not.be.null\r",
 													"   \r",
 													"   \r",
 													"})"
@@ -4837,14 +4573,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message cart deleted\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgCartFinishSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgCartFinishSucess\"))\r",
 													"   \r",
 													"})"
 												],
@@ -4876,14 +4612,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 400\", () => {\r",
 													"    pm.response.to.have.status(400)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message cart deleted\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgCartNotFound\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgCartNotFound\"))\r",
 													"   \r",
 													"})"
 												],
@@ -4962,9 +4698,11 @@
 													"    return randomNames\r",
 													"}\r",
 													"\r",
+													"const randomNumber = Math.floor(Math.random() * 9000) + 1000\r",
+													"\r",
 													"pm.environment.set(\"ProductSecondName\", productsSecondName())\r",
 													"\r",
-													"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\"))\r",
+													"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\") + \" \" + randomNumber)\r",
 													"\r",
 													"function priceProduct() {\r",
 													"    return Math.round(Math.random() * (12999.99 - 9.99) + 9.99);\r",
@@ -5035,20 +4773,20 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
-													"pm.environment.set(\"ProductId\", data._id)\r",
+													"pm.environment.set(\"ProductId\", responseData._id)\r",
 													"\r",
 													"pm.test(\"Check Status Code is 201\", () => {\r",
 													"    pm.response.to.have.status(201)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message product was successsfully registered\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check id is not null\", () => {\r",
-													"    pm.expect(data._id).to.not.be.null\r",
+													"    pm.expect(responseData._id).to.not.be.null\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -5107,7 +4845,7 @@
 													"    return randomNames\r",
 													"}\r",
 													"\r",
-													"pm.environment.set(\"ProductFirstName2\", productsFirstName())\r",
+													"pm.environment.set(\"ProductFirstName\", productsFirstName())\r",
 													"\r",
 													"function productsSecondName() {\r",
 													"    const names = [   \r",
@@ -5129,15 +4867,17 @@
 													"    return randomNames\r",
 													"}\r",
 													"\r",
-													"pm.environment.set(\"ProductSecondName2\", productsSecondName())\r",
+													"const randomNumber = Math.floor(Math.random() * 9000) + 1000\r",
 													"\r",
-													"pm.environment.set(\"Product2\", pm.environment.get(\"ProductFirstName2\") + \" \" + pm.environment.get(\"ProductSecondName2\"))\r",
+													"pm.environment.set(\"ProductSecondName\", productsSecondName())\r",
+													"\r",
+													"pm.environment.set(\"Product2\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\") + \" \" + randomNumber)\r",
 													"\r",
 													"function priceProduct() {\r",
 													"    return Math.round(Math.random() * (12999.99 - 9.99) + 9.99);\r",
 													"}\r",
 													"\r",
-													"pm.environment.set(\"PriceProduct2\", priceProduct())\r",
+													"pm.environment.set(\"PriceProduct\", priceProduct())\r",
 													"\r",
 													"function productDescription() {\r",
 													"    const description = [   \"Fórmula inovadora para resultados visíveis e duradouros\",\r",
@@ -5185,14 +4925,14 @@
 													"    return randomDescription\r",
 													"}\r",
 													"\r",
-													"pm.environment.set(\"ProductDescription2\", productDescription())\r",
+													"pm.environment.set(\"ProductDescription\", productDescription())\r",
 													"\r",
 													"function generateStock() {\r",
 													"    // Gera uma quantidade aleatória entre 1 e 1000\r",
 													"    return Math.floor(Math.random() * 1000) + 1;\r",
 													"}\r",
 													"\r",
-													"pm.environment.set(\"ProductQuantity2\", generateStock())"
+													"pm.environment.set(\"ProductQuantity\", generateStock())"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -5202,20 +4942,20 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
-													"pm.environment.set(\"ProductId2\", data._id)\r",
+													"pm.environment.set(\"ProductId2\", responseData._id)\r",
 													"\r",
 													"pm.test(\"Check Status Code is 201\", () => {\r",
 													"    pm.response.to.have.status(201)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message product was successsfully registered\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check id is not null\", () => {\r",
-													"    pm.expect(data._id).to.not.be.null\r",
+													"    pm.expect(responseData._id).to.not.be.null\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -5269,16 +5009,16 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 201\", () => {\r",
 													"    pm.response.to.have.status(201)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check cart created\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgCartCreated\"))\r",
-													"    pm.expect(data).to.have.property(\"_id\").and.to.not.be.null\r",
-													"    pm.environment.set(\"CartId\", data._id)\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgCartCreated\"))\r",
+													"    pm.expect(responseData).to.have.property(\"_id\").and.to.not.be.null\r",
+													"    pm.environment.set(\"CartId\", responseData._id)\r",
 													"})"
 												],
 												"type": "text/javascript",
@@ -5317,18 +5057,18 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check cart list have a property end not null\", () => {\r",
-													"    pm.expect(data.produtos[0]).to.have.property(\"idProduto\").and.to.not.be.null\r",
+													"    pm.expect(responseData.produtos[0]).to.have.property(\"idProduto\").and.to.not.be.null\r",
 													"\r",
-													"    pm.expect(data.produtos[0]).to.have.property(\"quantidade\").and.to.not.be.null\r",
+													"    pm.expect(responseData.produtos[0]).to.have.property(\"quantidade\").and.to.not.be.null\r",
 													"   \r",
-													"   pm.expect(data.produtos[0]).to.have.property(\"precoUnitario\").and.to.not.be.null\r",
+													"   pm.expect(responseData.produtos[0]).to.have.property(\"precoUnitario\").and.to.not.be.null\r",
 													"   \r",
 													"   \r",
 													"})"
@@ -5361,14 +5101,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 200\", () => {\r",
 													"    pm.response.to.have.status(200)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message cart deleted\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgCartCancelSucess\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgCartCancelSucess\"))\r",
 													"   \r",
 													"})"
 												],
@@ -5400,14 +5140,14 @@
 											"listen": "test",
 											"script": {
 												"exec": [
-													"const data = pm.response.json()\r",
+													"const responseData = pm.response.json()\r",
 													"\r",
 													"pm.test(\"Check Status Code is 400\", () => {\r",
 													"    pm.response.to.have.status(400)\r",
 													"})\r",
 													"\r",
 													"pm.test(\"Check message cart deleted\", () => {\r",
-													"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgCartNotFound\"))\r",
+													"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgCartNotFound\"))\r",
 													"   \r",
 													"})"
 												],
@@ -5440,66 +5180,20 @@
 					"name": "Exceptions",
 					"item": [
 						{
-							"name": "Cadastrar carrinho em duplicidade",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"const data = pm.response.json()\r",
-											"\r",
-											"pm.test(\"Check Status Code is 400\", () => {\r",
-											"    pm.response.to.have.status(400)\r",
-											"})\r",
-											"\r",
-											"pm.test(\"Check message error add cart\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgCartDuplicated\"))\r",
-											"})"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"produtos\": [\r\n    {\r\n      \"idProduto\": \"{{ProductIdDuplicate}}\",\r\n      \"quantidade\": 1\r\n    },\r\n    {\r\n      \"idProduto\": \"{{ProductIdDuplicate2}}\",\r\n      \"quantidade\": 3\r\n    }\r\n  ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BaseUrl}}/carrinhos",
-									"host": [
-										"{{BaseUrl}}"
-									],
-									"path": [
-										"carrinhos"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Cadastrar carrinho com produto inválido",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 400\", () => {\r",
 											"    pm.response.to.have.status(400)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message error add cart\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductNotFound\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductNotFound\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -5538,14 +5232,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 401\", () => {\r",
 											"    pm.response.to.have.status(401)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message error add cart\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgErrorToken\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgErrorToken\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -5596,63 +5290,20 @@
 							"response": []
 						},
 						{
-							"name": "Listar carrinhos com id do carrinho inválido como query",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"const data = pm.response.json()\r",
-											"\r",
-											"pm.test(\"Check Status Code is 400\", () => {\r",
-											"    pm.response.to.have.status(400)\r",
-											"})\r",
-											"\r",
-											"pm.test(\"Check message error add cart\", () => {\r",
-											"    pm.expect(data.idCarrinho).to.eql(pm.globals.get(\"MsgCartIdNotAllowed\"))\r",
-											"})"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{BaseUrl}}/carrinhos?idCarrinho={{InvalidCartId}}",
-									"host": [
-										"{{BaseUrl}}"
-									],
-									"path": [
-										"carrinhos"
-									],
-									"query": [
-										{
-											"key": "idCarrinho",
-											"value": "{{InvalidCartId}}"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Listar carrinhos  com preço total inválido como query",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 400\", () => {\r",
 											"    pm.response.to.have.status(400)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message error add cart\", () => {\r",
-											"    pm.expect(data.precoTotal).to.eql(pm.globals.get(\"MsgInvalidTotalPrice\"))\r",
+											"    pm.expect(responseData.precoTotal).to.eql(pm.globals.get(\"MsgInvalidTotalPrice\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -5688,14 +5339,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 400\", () => {\r",
 											"    pm.response.to.have.status(400)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message error add cart\", () => {\r",
-											"    pm.expect(data.quantidadeTotal).to.eql(pm.globals.get(\"MsgInvalidTotalQuantity\"))\r",
+											"    pm.expect(responseData.quantidadeTotal).to.eql(pm.globals.get(\"MsgInvalidTotalQuantity\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -5731,14 +5382,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 401\", () => {\r",
 											"    pm.response.to.have.status(401)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message error add cart\", () => {\r",
-											"    pm.expect(data.quantidadeTotal).to.eql(pm.globals.get(\"MsgTokenError\"))\r",
+											"    pm.expect(responseData.quantidadeTotal).to.eql(pm.globals.get(\"MsgTokenError\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -5772,14 +5423,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 401\", () => {\r",
 											"    pm.response.to.have.status(401)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message error add cart\", () => {\r",
-											"    pm.expect(data.quantidadeTotal).to.eql(pm.globals.get(\"MsgTokenError\"))\r",
+											"    pm.expect(responseData.quantidadeTotal).to.eql(pm.globals.get(\"MsgTokenError\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -5809,7 +5460,7 @@
 					]
 				},
 				{
-					"name": "Exception - Excluir produto que está em um carrinho",
+					"name": "Exception - Cart Duplicate",
 					"item": [
 						{
 							"name": "Cadastrar produto com usuário admin com sucesso",
@@ -5860,9 +5511,11 @@
 											"    return randomNames\r",
 											"}\r",
 											"\r",
+											"const randomNumber = Math.floor(Math.random() * 9000) + 1000\r",
+											"\r",
 											"pm.environment.set(\"ProductSecondName\", productsSecondName())\r",
 											"\r",
-											"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\"))\r",
+											"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\") + \" \" + randomNumber)\r",
 											"\r",
 											"function priceProduct() {\r",
 											"    return Math.round(Math.random() * (12999.99 - 9.99) + 9.99);\r",
@@ -5933,20 +5586,526 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.environment.set(\"ProductId\", data._id)\r",
+											"pm.environment.set(\"ProductId\", responseData._id)\r",
 											"\r",
 											"pm.test(\"Check Status Code is 201\", () => {\r",
 											"    pm.response.to.have.status(201)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message product was successsfully registered\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check id is not null\", () => {\r",
-											"    pm.expect(data._id).to.not.be.null\r",
+											"    pm.expect(responseData._id).to.not.be.null\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"{{Product}}\",\r\n  \"preco\": {{PriceProduct}},\r\n  \"descricao\": \"{{ProductDescription}}\",\r\n  \"quantidade\": {{ProductQuantity}}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/produtos",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cadastrar produto 2 com usuário admin com sucesso",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function productsFirstName() {\r",
+											"    const names = [   \r",
+											"    \"Purezza\", \"FreshX\", \"GlowStar\", \"ShinePro\", \"BloomX\",\r",
+											"    \"Radiance\", \"PurityPro\", \"EssenceX\", \"Natureza\", \"Harmonia\",\r",
+											"    \"Balance\", \"Wellness\", \"Vitality\", \"BeautyPro\", \"CareMax\",\r",
+											"    \"BioStar\", \"Organix\", \"FreshPro\", \"GreenX\", \"Naturalis\",\r",
+											"    \"MakePro\", \"ColorX\", \"ShadePro\", \"ToneMax\", \"HueStar\",\r",
+											"    \"Pigmenta\", \"ChromaX\", \"TintPro\", \"ShinePlus\", \"GlowMax\",\r",
+											"    \"BeautyX\", \"FacePro\", \"LookMax\", \"StylePro\", \"ChicStar\",\r",
+											"    \"TreatmentPro\", \"CarePlus\", \"HealMax\", \"RepairX\", \"RenewPro\",\r",
+											"    \"RestoreStar\", \"RevivePlus\", \"RejuvenX\", \"YouthPro\", \"VitalX\",\r",
+											"    \"PurePro\", \"CleanMax\", \"FreshStar\", \"PuriPlus\", \"ClaroX\",\r",
+											"    \"ElitePro\", \"LuxStar\", \"PremiumX\", \"SupremePro\", \"UltraMax\",\r",
+											"    \"ExclusivePlus\", \"RoyalStar\", \"DiamondX\", \"GoldPro\", \"PlatinumPlus\"\r",
+											"    ]\r",
+											"\r",
+											"    const randomNames = names[Math.floor(Math.random() * names.length)]\r",
+											"    return randomNames\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"ProductFirstName\", productsFirstName())\r",
+											"\r",
+											"function productsSecondName() {\r",
+											"    const names = [   \r",
+											"    \"Purezza\", \"FreshX\", \"GlowStar\", \"ShinePro\", \"BloomX\",\r",
+											"    \"Radiance\", \"PurityPro\", \"EssenceX\", \"Natureza\", \"Harmonia\",\r",
+											"    \"Balance\", \"Wellness\", \"Vitality\", \"BeautyPro\", \"CareMax\",\r",
+											"    \"BioStar\", \"Organix\", \"FreshPro\", \"GreenX\", \"Naturalis\",\r",
+											"    \"MakePro\", \"ColorX\", \"ShadePro\", \"ToneMax\", \"HueStar\",\r",
+											"    \"Pigmenta\", \"ChromaX\", \"TintPro\", \"ShinePlus\", \"GlowMax\",\r",
+											"    \"BeautyX\", \"FacePro\", \"LookMax\", \"StylePro\", \"ChicStar\",\r",
+											"    \"TreatmentPro\", \"CarePlus\", \"HealMax\", \"RepairX\", \"RenewPro\",\r",
+											"    \"RestoreStar\", \"RevivePlus\", \"RejuvenX\", \"YouthPro\", \"VitalX\",\r",
+											"    \"PurePro\", \"CleanMax\", \"FreshStar\", \"PuriPlus\", \"ClaroX\",\r",
+											"    \"ElitePro\", \"LuxStar\", \"PremiumX\", \"SupremePro\", \"UltraMax\",\r",
+											"    \"ExclusivePlus\", \"RoyalStar\", \"DiamondX\", \"GoldPro\", \"PlatinumPlus\"\r",
+											"    ]\r",
+											"\r",
+											"    const randomNames = names[Math.floor(Math.random() * names.length)]\r",
+											"    return randomNames\r",
+											"}\r",
+											"\r",
+											"const randomNumber = Math.floor(Math.random() * 9000) + 1000\r",
+											"\r",
+											"pm.environment.set(\"ProductSecondName\", productsSecondName())\r",
+											"\r",
+											"pm.environment.set(\"Product2\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\") + \" \" + randomNumber)\r",
+											"\r",
+											"function priceProduct() {\r",
+											"    return Math.round(Math.random() * (12999.99 - 9.99) + 9.99);\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"PriceProduct\", priceProduct())\r",
+											"\r",
+											"function productDescription() {\r",
+											"    const description = [   \"Fórmula inovadora para resultados visíveis e duradouros\",\r",
+											"    \"Desenvolvido com ingredientes selecionados para máximo desempenho\",\r",
+											"    \"Tecnologia avançada para cuidados pessoais de alta qualidade\",\r",
+											"    \"Solução profissional para necessidades específicas de beleza\",\r",
+											"    \"Composição especial para resultados excepcionais\",\r",
+											"    \"Formulação premium com ingredientes de alta pureza\",\r",
+											"    \"Desenvolvimento exclusivo para tratamentos sofisticados\",\r",
+											"    \"Tecnologia de ponta para cuidados avançados\",\r",
+											"    \"Sistema inovador de tratamento e manutenção\",\r",
+											"    \"Fórmula especial para resultados expressivos\",\r",
+											"    \"Composição única para máximo benefício\",\r",
+											"    \"Tecnologia de última geração para cuidados especiais\",\r",
+											"    \"Desenvolvimento exclusivo para resultados superiores\",\r",
+											"    \"Solução profissional de alta performance\",\r",
+											"    \"Formulação avançada para necessidades específicas\",\r",
+											"    \"Tecnologia premium para resultados excepcionais\",\r",
+											"    \"Composição especial para cuidados intensivos\",\r",
+											"    \"Sistema inovador de tratamento e proteção\",\r",
+											"    \"Fórmula exclusiva para resultados duradouros\",\r",
+											"    \"Desenvolvimento sofisticado para cuidados avançados\",\r",
+											"    \"Tecnologia de ponta para máximo desempenho\",\r",
+											"    \"Solução profissional de alta qualidade\",\r",
+											"    \"Composição premium para resultados superiores\",\r",
+											"    \"Formulação especial para necessidades específicas\",\r",
+											"    \"Tecnologia avançada para cuidados especiais\",\r",
+											"    \"Sistema inovador para tratamentos exclusivos\",\r",
+											"    \"Fórmula única para resultados expressivos\",\r",
+											"    \"Desenvolvimento exclusivo para máximo benefício\",\r",
+											"    \"Composição de alta qualidade para cuidados especiais\",\r",
+											"    \"Tecnologia sofisticada para resultados excepcionais\",\r",
+											"    \"Solução premium para necessidades específicas\",\r",
+											"    \"Formulação avançada para tratamentos intensivos\",\r",
+											"    \"Sistema profissional de alta performance\",\r",
+											"    \"Fórmula especial para resultados duradouros\",\r",
+											"    \"Desenvolvimento inovador para cuidados avançados\",\r",
+											"    \"Tecnologia de última geração para máximo desempenho\",\r",
+											"    \"Composição exclusiva para resultados superiores\",\r",
+											"    \"Solução sofisticada para necessidades específicas\",\r",
+											"    \"Formulação premium para cuidados especiais\",\r",
+											"    \"Sistema avançado para tratamentos exclusivos\"]\r",
+											"\r",
+											"    const randomDescription = description[Math.floor(Math.random() * description.length)]\r",
+											"    return randomDescription\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"ProductDescription\", productDescription())\r",
+											"\r",
+											"function generateStock() {\r",
+											"    // Gera uma quantidade aleatória entre 1 e 1000\r",
+											"    return Math.floor(Math.random() * 1000) + 1;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"ProductQuantity\", generateStock())"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const responseData = pm.response.json()\r",
+											"\r",
+											"pm.environment.set(\"ProductId2\", responseData._id)\r",
+											"\r",
+											"pm.test(\"Check Status Code is 201\", () => {\r",
+											"    pm.response.to.have.status(201)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message product was successsfully registered\", () => {\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check id is not null\", () => {\r",
+											"    pm.expect(responseData._id).to.not.be.null\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"{{Product2}}\",\r\n  \"preco\": {{PriceProduct2}},\r\n  \"descricao\": \"{{ProductDescription2}}\",\r\n  \"quantidade\": {{ProductQuantity2}}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/produtos",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cadastrar carrinho com sucesso",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function generateQuantityProductCart() {\r",
+											"    // Gera uma quantidade aleatória entre 1 e 20\r",
+											"    return Math.floor(Math.random() * 20) + 1;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"QuantityProductCart\", generateQuantityProductCart())"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const responseData = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 201\", () => {\r",
+											"    pm.response.to.have.status(201)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check cart created\", () => {\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgCartCreated\"))\r",
+											"    pm.expect(responseData).to.have.property(\"_id\").and.to.not.be.null\r",
+											"    pm.environment.set(\"CartId\", responseData._id)\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"produtos\": [\r\n    {\r\n      \"idProduto\": \"{{ProductId}}\",\r\n      \"quantidade\": {{QuantityProductCart}}\r\n    },\r\n    {\r\n      \"idProduto\": \"{{ProductId2}}\",\r\n      \"quantidade\": {{QuantityProductCart}}\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/carrinhos",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"carrinhos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cadastrar carrinho em duplicidade",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function generateQuantityProductCart() {\r",
+											"    // Gera uma quantidade aleatória entre 1 e 20\r",
+											"    return Math.floor(Math.random() * 20) + 1;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"QuantityProductCart\", generateQuantityProductCart())"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const responseData = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 400\", () => {\r",
+											"    pm.response.to.have.status(400)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message error add cart\", () => {\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgCartDuplicated\"))\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"produtos\": [\r\n    {\r\n      \"idProduto\": \"{{ProductId}}\",\r\n      \"quantidade\": {{QuantityProductCart}}\r\n    },\r\n    {\r\n      \"idProduto\": \"{{ProductId2}}\",\r\n      \"quantidade\": {{QuantityProductCart}}\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/carrinhos",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"carrinhos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Excluir carrinho após finalização da compra com sucesso",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const responseData = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message cart deleted\", () => {\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgCartFinishSucess\"))\r",
+											"   \r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/carrinhos/concluir-compra",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"carrinhos",
+										"concluir-compra"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Exception - Excluir produto que está em um carrinho",
+					"item": [
+						{
+							"name": "Cadastrar produto com usuário admin com sucesso",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function productsFirstName() {\r",
+											"    const names = [   \r",
+											"    \"Purezza\", \"FreshX\", \"GlowStar\", \"ShinePro\", \"BloomX\",\r",
+											"    \"Radiance\", \"PurityPro\", \"EssenceX\", \"Natureza\", \"Harmonia\",\r",
+											"    \"Balance\", \"Wellness\", \"Vitality\", \"BeautyPro\", \"CareMax\",\r",
+											"    \"BioStar\", \"Organix\", \"FreshPro\", \"GreenX\", \"Naturalis\",\r",
+											"    \"MakePro\", \"ColorX\", \"ShadePro\", \"ToneMax\", \"HueStar\",\r",
+											"    \"Pigmenta\", \"ChromaX\", \"TintPro\", \"ShinePlus\", \"GlowMax\",\r",
+											"    \"BeautyX\", \"FacePro\", \"LookMax\", \"StylePro\", \"ChicStar\",\r",
+											"    \"TreatmentPro\", \"CarePlus\", \"HealMax\", \"RepairX\", \"RenewPro\",\r",
+											"    \"RestoreStar\", \"RevivePlus\", \"RejuvenX\", \"YouthPro\", \"VitalX\",\r",
+											"    \"PurePro\", \"CleanMax\", \"FreshStar\", \"PuriPlus\", \"ClaroX\",\r",
+											"    \"ElitePro\", \"LuxStar\", \"PremiumX\", \"SupremePro\", \"UltraMax\",\r",
+											"    \"ExclusivePlus\", \"RoyalStar\", \"DiamondX\", \"GoldPro\", \"PlatinumPlus\"\r",
+											"    ]\r",
+											"\r",
+											"    const randomNames = names[Math.floor(Math.random() * names.length)]\r",
+											"    return randomNames\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"ProductFirstName\", productsFirstName())\r",
+											"\r",
+											"function productsSecondName() {\r",
+											"    const names = [   \r",
+											"    \"Purezza\", \"FreshX\", \"GlowStar\", \"ShinePro\", \"BloomX\",\r",
+											"    \"Radiance\", \"PurityPro\", \"EssenceX\", \"Natureza\", \"Harmonia\",\r",
+											"    \"Balance\", \"Wellness\", \"Vitality\", \"BeautyPro\", \"CareMax\",\r",
+											"    \"BioStar\", \"Organix\", \"FreshPro\", \"GreenX\", \"Naturalis\",\r",
+											"    \"MakePro\", \"ColorX\", \"ShadePro\", \"ToneMax\", \"HueStar\",\r",
+											"    \"Pigmenta\", \"ChromaX\", \"TintPro\", \"ShinePlus\", \"GlowMax\",\r",
+											"    \"BeautyX\", \"FacePro\", \"LookMax\", \"StylePro\", \"ChicStar\",\r",
+											"    \"TreatmentPro\", \"CarePlus\", \"HealMax\", \"RepairX\", \"RenewPro\",\r",
+											"    \"RestoreStar\", \"RevivePlus\", \"RejuvenX\", \"YouthPro\", \"VitalX\",\r",
+											"    \"PurePro\", \"CleanMax\", \"FreshStar\", \"PuriPlus\", \"ClaroX\",\r",
+											"    \"ElitePro\", \"LuxStar\", \"PremiumX\", \"SupremePro\", \"UltraMax\",\r",
+											"    \"ExclusivePlus\", \"RoyalStar\", \"DiamondX\", \"GoldPro\", \"PlatinumPlus\"\r",
+											"    ]\r",
+											"\r",
+											"    const randomNames = names[Math.floor(Math.random() * names.length)]\r",
+											"    return randomNames\r",
+											"}\r",
+											"\r",
+											"const randomNumber = Math.floor(Math.random() * 9000) + 1000\r",
+											"\r",
+											"pm.environment.set(\"ProductSecondName\", productsSecondName())\r",
+											"\r",
+											"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\") + \" \" + randomNumber)\r",
+											"\r",
+											"function priceProduct() {\r",
+											"    return Math.round(Math.random() * (12999.99 - 9.99) + 9.99);\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"PriceProduct\", priceProduct())\r",
+											"\r",
+											"function productDescription() {\r",
+											"    const description = [   \"Fórmula inovadora para resultados visíveis e duradouros\",\r",
+											"    \"Desenvolvido com ingredientes selecionados para máximo desempenho\",\r",
+											"    \"Tecnologia avançada para cuidados pessoais de alta qualidade\",\r",
+											"    \"Solução profissional para necessidades específicas de beleza\",\r",
+											"    \"Composição especial para resultados excepcionais\",\r",
+											"    \"Formulação premium com ingredientes de alta pureza\",\r",
+											"    \"Desenvolvimento exclusivo para tratamentos sofisticados\",\r",
+											"    \"Tecnologia de ponta para cuidados avançados\",\r",
+											"    \"Sistema inovador de tratamento e manutenção\",\r",
+											"    \"Fórmula especial para resultados expressivos\",\r",
+											"    \"Composição única para máximo benefício\",\r",
+											"    \"Tecnologia de última geração para cuidados especiais\",\r",
+											"    \"Desenvolvimento exclusivo para resultados superiores\",\r",
+											"    \"Solução profissional de alta performance\",\r",
+											"    \"Formulação avançada para necessidades específicas\",\r",
+											"    \"Tecnologia premium para resultados excepcionais\",\r",
+											"    \"Composição especial para cuidados intensivos\",\r",
+											"    \"Sistema inovador de tratamento e proteção\",\r",
+											"    \"Fórmula exclusiva para resultados duradouros\",\r",
+											"    \"Desenvolvimento sofisticado para cuidados avançados\",\r",
+											"    \"Tecnologia de ponta para máximo desempenho\",\r",
+											"    \"Solução profissional de alta qualidade\",\r",
+											"    \"Composição premium para resultados superiores\",\r",
+											"    \"Formulação especial para necessidades específicas\",\r",
+											"    \"Tecnologia avançada para cuidados especiais\",\r",
+											"    \"Sistema inovador para tratamentos exclusivos\",\r",
+											"    \"Fórmula única para resultados expressivos\",\r",
+											"    \"Desenvolvimento exclusivo para máximo benefício\",\r",
+											"    \"Composição de alta qualidade para cuidados especiais\",\r",
+											"    \"Tecnologia sofisticada para resultados excepcionais\",\r",
+											"    \"Solução premium para necessidades específicas\",\r",
+											"    \"Formulação avançada para tratamentos intensivos\",\r",
+											"    \"Sistema profissional de alta performance\",\r",
+											"    \"Fórmula especial para resultados duradouros\",\r",
+											"    \"Desenvolvimento inovador para cuidados avançados\",\r",
+											"    \"Tecnologia de última geração para máximo desempenho\",\r",
+											"    \"Composição exclusiva para resultados superiores\",\r",
+											"    \"Solução sofisticada para necessidades específicas\",\r",
+											"    \"Formulação premium para cuidados especiais\",\r",
+											"    \"Sistema avançado para tratamentos exclusivos\"]\r",
+											"\r",
+											"    const randomDescription = description[Math.floor(Math.random() * description.length)]\r",
+											"    return randomDescription\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"ProductDescription\", productDescription())\r",
+											"\r",
+											"function generateStock() {\r",
+											"    // Gera uma quantidade aleatória entre 1 e 1000\r",
+											"    return Math.floor(Math.random() * 1000) + 1;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"ProductQuantity\", generateStock())"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const responseData = pm.response.json()\r",
+											"\r",
+											"pm.environment.set(\"ProductId\", responseData._id)\r",
+											"\r",
+											"pm.test(\"Check Status Code is 201\", () => {\r",
+											"    pm.response.to.have.status(201)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message product was successsfully registered\", () => {\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check id is not null\", () => {\r",
+											"    pm.expect(responseData._id).to.not.be.null\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -6028,16 +6187,15 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.test(\"Check Status Code is 401\", () => {\r",
-											"    pm.response.to.have.status(401)\r",
+											"pm.test(\"Check Status Code is 400\", () => {\r",
+											"    pm.response.to.have.status(400)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message product in cart\", () => {\r",
-											"    pm.expect(data.message[0]).to.eql(pm.globals.get(\"MsgDeletedProductCart\"))\r",
-											"    // pm.expect(data.idCarrinho[0]).to.eql(pm.environment.get(\"CartId\"))\r",
-											"})"
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgDeletedProductCart\"))\r",
+											"    })"
 										],
 										"type": "text/javascript",
 										"packages": {}
@@ -6055,6 +6213,45 @@
 									"path": [
 										"produtos",
 										"{{ProductId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Excluir carrinho após finalização da compra com sucesso",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const responseData = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message cart deleted\", () => {\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgCartFinishSucess\"))\r",
+											"   \r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/carrinhos/concluir-compra",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"carrinhos",
+										"concluir-compra"
 									]
 								}
 							},
@@ -6114,9 +6311,11 @@
 											"    return randomNames\r",
 											"}\r",
 											"\r",
+											"const randomNumber = Math.floor(Math.random() * 9000) + 1000\r",
+											"\r",
 											"pm.environment.set(\"ProductSecondName\", productsSecondName())\r",
 											"\r",
-											"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\"))\r",
+											"pm.environment.set(\"Product\", pm.environment.get(\"ProductFirstName\") + \" \" + pm.environment.get(\"ProductSecondName\") + \" \" + randomNumber)\r",
 											"\r",
 											"function priceProduct() {\r",
 											"    return Math.round(Math.random() * (12999.99 - 9.99) + 9.99);\r",
@@ -6187,20 +6386,20 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
-											"pm.environment.set(\"ProductId\", data._id)\r",
+											"pm.environment.set(\"ProductId\", responseData._id)\r",
 											"\r",
 											"pm.test(\"Check Status Code is 201\", () => {\r",
 											"    pm.response.to.have.status(201)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message product was successsfully registered\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductSucess\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check id is not null\", () => {\r",
-											"    pm.expect(data._id).to.not.be.null\r",
+											"    pm.expect(responseData._id).to.not.be.null\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -6282,61 +6481,18 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 400\", () => {\r",
 											"    pm.response.to.have.status(400)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message error delete\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgDeleteError\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgDeleteError\"))\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check cart id is not empty\", () => {\r",
-											"    pm.expect(data.idCarrinho).to.not.be.empty\r",
-											"})"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{BaseUrl}}/usuarios/{{UserID}}",
-									"host": [
-										"{{BaseUrl}}"
-									],
-									"path": [
-										"usuarios",
-										"{{UserID}}"
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Test Teardwon",
-					"item": [
-						{
-							"name": "Excluir usuário admin por id com sucesso",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"const data = pm.response.json()\r",
-											"\r",
-											"pm.test(\"Check Status Code is 200\", () => {\r",
-											"    pm.response.to.have.status(200)\r",
-											"})\r",
-											"\r",
-											"pm.test(\"Verify message user deleted sucess\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgUserDeletedSucess\"))\r",
+											"    pm.expect(responseData.idCarrinho).to.not.be.empty\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -6361,20 +6517,64 @@
 							"response": []
 						},
 						{
+							"name": "Excluir carrinho após finalização da compra com sucesso",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const responseData = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Check message cart deleted\", () => {\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgCartFinishSucess\"))\r",
+											"   \r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/carrinhos/concluir-compra",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"carrinhos",
+										"concluir-compra"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Teardwon",
+					"item": [
+						{
 							"name": "Excluir produto com usuário admin com sucesso",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 200\", () => {\r",
 											"    pm.response.to.have.status(200)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message deleted sucess\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductDeletedSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductDeletedSucess\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -6405,14 +6605,14 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"const data = pm.response.json()\r",
+											"const responseData = pm.response.json()\r",
 											"\r",
 											"pm.test(\"Check Status Code is 200\", () => {\r",
-											"    pm.response.to.have.Status(200)\r",
+											"    pm.response.to.have.status(200)\r",
 											"})\r",
 											"\r",
 											"pm.test(\"Check message deleted sucess\", () => {\r",
-											"    pm.expect(data.message).to.eql(pm.globals.get(\"MsgProductDeletedSucess\"))\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgProductDeletedSucess\"))\r",
 											"})"
 										],
 										"type": "text/javascript",
@@ -6435,6 +6635,44 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Excluir usuário admin por id com sucesso",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const responseData = pm.response.json()\r",
+											"\r",
+											"pm.test(\"Check Status Code is 200\", () => {\r",
+											"    pm.response.to.have.status(200)\r",
+											"})\r",
+											"\r",
+											"pm.test(\"Verify message user deleted sucess\", () => {\r",
+											"    pm.expect(responseData.message).to.eql(pm.globals.get(\"MsgUserDeletedSucess\"))\r",
+											"})"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/usuarios/{{UserAdminId}}",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"usuarios",
+										"{{UserAdminId}}"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
@@ -6444,13 +6682,13 @@
 				"type": "apikey",
 				"apikey": [
 					{
-						"key": "value",
-						"value": "{{TokenAdmin}}",
+						"key": "key",
+						"value": "Authorization",
 						"type": "string"
 					},
 					{
-						"key": "key",
-						"value": "authorization",
+						"key": "value",
+						"value": "{{TokenAdmin}}",
 						"type": "string"
 					}
 				]

@@ -15,205 +15,211 @@
 		},
 		{
 			"key": "EmailModel",
-			"value": "",
+			"value": "fulano@qa.com",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "PasswordModel",
-			"value": "",
+			"value": "teste",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgLoginFail",
-			"value": "",
+			"value": "Email e/ou senha inválidos",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgEmailEmpty",
-			"value": "",
+			"value": "email não pode ficar em branco",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgWrongEmailPassword",
-			"value": "",
+			"value": "Email e/ou senha inválidos",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgPasswordEmpty",
-			"value": "",
+			"value": "password não pode ficar em branco",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgUserCreatedSucess",
-			"value": "",
+			"value": "Cadastro realizado com sucesso",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgUserUpdatedSucess",
-			"value": "",
+			"value": "Registro alterado com sucesso",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgUserDeletedSucess",
-			"value": "",
+			"value": "Registro excluído com sucesso",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgUserNotFound",
-			"value": "",
+			"value": "Usuário não encontrado",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgProductSucess",
-			"value": "",
+			"value": "Cadastro realizado com sucesso",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgDeleteError",
-			"value": "",
+			"value": "Não é permitido excluir usuário com carrinho cadastrado",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgEmailExists",
-			"value": "",
+			"value": "Este email já está sendo usado",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgIdIsNotAllowed",
-			"value": "",
+			"value": "id não é permitido",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgEmailIsNotAllowed",
-			"value": "",
+			"value": "e-mail não é permitido",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgPasswordIsNotAllowed",
-			"value": "",
+			"value": "senha não é permitido",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgInvalidId",
-			"value": "",
+			"value": "Usuário não encontrado",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgProductDeletedSucess",
-			"value": "",
+			"value": "Registro excluído com sucesso",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgCartCancelSucess",
-			"value": "",
+			"value": "Registro excluído com sucesso. Estoque dos produtos reabastecido",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgProductUpdatedSucess",
-			"value": "",
+			"value": "Registro alterado com sucesso",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgErrorToken",
-			"value": "",
+			"value": "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgInvalidPrice",
-			"value": "",
+			"value": "preco deve ser um número positivo",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgInvalidQuantity",
-			"value": "",
+			"value": "quantidade deve ser maior ou igual a 0",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgProductDuplicated",
-			"value": "",
+			"value": "Já existe produto com esse nome",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgDeletedProductCart",
-			"value": "",
+			"value": "Não é permitido excluir produto que faz parte de carrinho",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgCartCreated",
-			"value": "",
+			"value": "Cadastro realizado com sucesso",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgCartFinishSucess",
-			"value": "",
+			"value": "Registro excluído com sucesso",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgCartNotFound",
-			"value": "",
+			"value": "Carrinho não encontrado",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgCartDuplicated",
-			"value": "",
+			"value": "Não é permitido ter mais de 1 carrinho",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgProductNotFound",
-			"value": "",
+			"value": "Produto não encontrado",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgCartIdNotAllowed",
-			"value": "",
+			"value": "idCarrinho não é permitido",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgInvalidTotalPrice",
-			"value": "",
+			"value": "precoTotal deve ser um número positivo",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "MsgInvalidTotalQuantity",
-			"value": "",
+			"value": "quantidadeTotal deve ser um número positivo",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "MsgRouteAdmin",
+			"value": "Rota exclusiva para administradores",
 			"type": "default",
 			"enabled": true
 		}
 	],
 	"name": "Globals",
 	"_postman_variable_scope": "globals",
-	"_postman_exported_at": "2025-06-30T15:34:41.242Z",
-	"_postman_exported_using": "Postman/11.51.6"
+	"_postman_exported_at": "2025-08-11T22:36:49.223Z",
+	"_postman_exported_using": "Postman/11.58.0"
 }

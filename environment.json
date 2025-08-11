@@ -4,330 +4,300 @@
 	"values": [
 		{
 			"key": "Token",
-			"value": "",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZ1bGFub0BxYS5jb20iLCJwYXNzd29yZCI6InRlc3RlIiwiaWF0IjoxNzU0OTUxNDQyLCJleHAiOjE3NTQ5NTIwNDJ9.3O4CO-iw7Z2jHsNexUN8FvcMuCLE7x90TRQ7rUyA4SQ",
 			"type": "any",
 			"enabled": true
 		},
 		{
-			"key": "EmailInvalid",
-			"value": "",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "PasswordInvalid",
-			"value": "",
-			"type": "default",
-			"enabled": true
-		},
-		{
 			"key": "FirstName",
-			"value": "",
+			"value": "Elaine",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "LastName",
-			"value": "",
+			"value": "Terra",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "FullName",
-			"value": "",
+			"value": "Julia Machado",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "Provedor",
-			"value": "",
+			"value": "@gmail.com",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "MailUser",
-			"value": "",
+			"value": "juliamachado_8bb135f7-fad7-4c7e-961b-4415a8789ce8@gmail.com",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "Password",
-			"value": "",
+			"value": "qt$Ia1I",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "UserID",
-			"value": "",
+			"value": "pgVrflCG3vS6NhPp",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "NewPassword",
-			"value": "",
+			"value": "ftceU$Gzxw",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "Product",
-			"value": "",
+			"value": "PlatinumPlus PurePro",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "PriceProduct",
-			"value": "",
+			"value": "8052",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductDescription",
-			"value": "",
+			"value": "Fórmula especial para resultados expressivos",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductQuantity",
-			"value": "",
+			"value": "182",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductId",
-			"value": "",
+			"value": "AobF0IlGd2hpHhh8",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "Product2",
-			"value": "",
+			"value": "BeautyX GreenX",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "PriceProduct2",
-			"value": "",
+			"value": "4430",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductDescription2",
-			"value": "",
+			"value": "Desenvolvimento exclusivo para resultados superiores",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductQuantity2",
-			"value": "",
+			"value": "151",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductId2",
-			"value": "",
+			"value": "awDdsWKHeBOpbJ9Z",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "QuantityProductCart",
-			"value": "",
+			"value": "18",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "MailDuplicate",
-			"value": "",
+			"value": "beltrano@qa.com.br",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "InvalidId",
-			"value": "",
+			"value": "4S152nhjgfcccHH5",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "InvalidMail",
-			"value": "",
+			"value": "email_nao_existe@invalido.com",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "InvalidPassword",
-			"value": "",
+			"value": "teste111111111111111",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "PasswordUser",
-			"value": "",
+			"value": "xxvzXsR8E",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "TokenUser",
-			"value": "",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlhbWFjaGFkb184YmIxMzVmNy1mYWQ3LTRjN2UtOTYxYi00NDE1YTg3ODljZThAZ21haWwuY29tIiwicGFzc3dvcmQiOiJ4eHZ6WHNSOEUiLCJpYXQiOjE3NTQ5NTA1NjgsImV4cCI6MTc1NDk1MTE2OH0.x27dF7fnv81oTCVATxZcqQxZSOe55sCRPonYVhC1IVg",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductFirstName",
-			"value": "",
+			"value": "PlatinumPlus",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductSecondName",
-			"value": "",
+			"value": "PurePro",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductName",
-			"value": "",
+			"value": "Purezza CleanMax",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductFirstName2",
-			"value": "",
+			"value": "BeautyX",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductSecondName2",
-			"value": "",
+			"value": "GreenX",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductName2",
-			"value": "",
+			"value": "Harmonia GlowStar",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "Product1",
-			"value": "",
+			"value": "BioStar Purezza",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "TokenAdmin",
-			"value": "",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlhbWFjaGFkb181NGRiMjI1OC04ODA0LTRmYjctOTEwZC04ZGE4ZmUyY2NiODBAZ21haWwuY29tIiwicGFzc3dvcmQiOiJzdVM2ZkEiLCJpYXQiOjE3NTQ5NTA1NzAsImV4cCI6MTc1NDk1MTE3MH0.096E2O9FRvD952Q6WK2r1EDLlbutDFac3zLs6JLH9xk",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "FullNameAdmin",
-			"value": "",
+			"value": "Laura Veiga",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "MailUserAdmin",
-			"value": "",
+			"value": "juliamachado_54db2258-8804-4fb7-910d-8da8fe2ccb80@gmail.com",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "PasswordUserAdmin",
-			"value": "",
+			"value": "suS6fA",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "UserAdminId",
-			"value": "",
+			"value": "b47LxSEcDLQ9jGle",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "NewMailUserAdmin",
-			"value": "",
+			"value": "juliamachado_09352464-ae12-4c53-ad2c-090814af6539@hotmail.com",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "FullNameUserAdmin",
-			"value": "",
+			"value": "Elaine Terra",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "FullNameUser",
-			"value": "",
+			"value": "Rosangela Barros",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "NewMailUser",
-			"value": "",
+			"value": "juliamachado_f37f6e55-0832-41fc-b68d-f9ad7c10f192@hotmail.com",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "NewPriceProduct",
-			"value": "",
+			"value": "7382",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "ProductDuplicate",
-			"value": "",
+			"value": "Logitech MX Vertical",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "InvalidProductId",
-			"value": "",
+			"value": "4Hz6rNXtZIfE2LXb",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "CartId",
-			"value": "",
+			"value": "3YcrnehOOF3aeWWL",
 			"type": "any",
 			"enabled": true
 		},
 		{
 			"key": "InvalidCartId",
-			"value": "",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "ProductIdDuplicate",
-			"value": "",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "",
-			"value": "",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "ProductIdDuplicate2",
-			"value": "",
+			"value": "qbMqntef4iTOwWGF",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "InvalidTotalPrice",
-			"value": "",
+			"value": "0000",
 			"type": "default",
 			"enabled": true
 		},
 		{
 			"key": "InvalidTotalQuantity",
-			"value": "",
+			"value": "0",
 			"type": "default",
 			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2025-06-30T15:34:35.230Z",
-	"_postman_exported_using": "Postman/11.51.6"
+	"_postman_exported_at": "2025-08-11T22:43:28.446Z",
+	"_postman_exported_using": "Postman/11.58.0"
 }
